@@ -1,0 +1,22 @@
+/* media */
+$media-list: (
+  "xxs": 375,
+  "xs": 560,
+  "sm": 767,
+  "md": 1079,
+  "lg": 1279,
+  "xl": 1599,
+  "xxl": 1900,
+);
+
+/* шрифты */
+$mainFont: "Inter", "Arial", sans-serif;
+$fs-main: 18px;
+$lh-main: (32 / 18);
+
+/* цвета */
+$dark: #3c4c54;
+$persianGreen: #009a9d;
+$aliceBlue: #e6f4fa;
+
+$textMainColor: $dark;

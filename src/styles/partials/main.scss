@@ -1,0 +1,37 @@
+html {
+  font-size: $fs-main;
+  line-height: $lh-main;
+}
+
+body {
+  font-family: $mainFont;
+  color: $textMainColor;
+}
+
+.container {
+  width: 1330px;
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* Страница с компонентами */
+.component-wrapper {
+  padding: 40px 0;
+  background-color: #fff;
+
+  & + & {
+    box-shadow: 0 -1px 0 0 #333;
+  }
+}

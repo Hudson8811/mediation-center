@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Разводящая'
+		};
+
+		const pages = [
+			{url: 'components.html', text: 'Компоненты общие для нескольких страниц'}
+		];
+
+block main
+	.container
+		h1 Страницы проекта
+
+		ul
+			each item, index in pages
+				li 
+					a(href= item.url)= (index + 1) + '. ' + item.text
+
+
