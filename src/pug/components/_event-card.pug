@@ -1,0 +1,13 @@
+mixin event-card(image, title, date, className, url, links)
+	.event-card(class= className)
+		if image
+			.event-card__image
+				img(src='images/event/' + image + '.jpg', srcset='images/event/' + image + '@2x.jpg 2x', alt='')
+		.event-card__content
+			a.event-card__title(href= url, target='_blank')!= title
+			if date
+				.event-card__date!= date
+			if links
+				.event-card__links
+					+arrow-link('все мероприятия', 'more-card__link', '#')
+					+arrow-link('все программы', 'more-card__link', '#')

@@ -1,0 +1,152 @@
+.event-card {
+	$self: &;
+
+	display: flex;
+	border: 3px solid $persianGreen;
+
+	@include max(sm) {
+		flex-direction: column;
+	}
+
+	&__image {
+		width: 30%;
+		height: 300px;
+		margin: -3px 0 -3px -3px;
+
+		@include max(md) {
+			width: 50%;
+		}
+
+		@include max(sm) {
+			width: calc(100% + 6px);
+			margin: -3px -3px 0 -3px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		width: 70%;
+		display: flex;
+		flex-direction: column;
+		padding: 37px 20px 27px 30px;
+		box-sizing: border-box;
+
+		@include max(md) {
+			width: 50%;
+			padding: 20px;
+		}
+
+		@include max(sm) {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		font-size: 32px;
+		line-height: 39px;
+		font-weight: 600;
+		color: $persianGreen;
+		margin-bottom: 15px;
+		transition: color 0.3s ease;
+
+		@include max(md) {
+			font-size: 22px;
+			line-height: 25px;
+		}
+
+		@include hover {
+			color: #00b3b7;
+		}
+	}
+
+	&__date {
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 600;
+		margin-top: auto;
+
+		@include max(md) {
+			font-size: 15px;
+			line-height: 18px;
+		}
+	}
+
+	&__links {
+		display: flex;
+		justify-content: space-between;
+		margin-top: auto;
+
+		@include max(md) {
+			flex-direction: column;
+		}
+	}
+
+	&--big-image {
+		#{$self} {
+			&__image {
+				width: 48%;
+
+				@include max(md) {
+					width: 50%;
+				}
+
+				@include max(sm) {
+					width: calc(100% + 6px);
+				}
+			}
+
+			&__content {
+				width: 52%;
+
+				@include max(md) {
+					width: 50%;
+				}
+
+				@include max(sm) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&--border-wide {
+		border-left: 70px solid $persianGreen;
+
+		@include max(sm) {
+			border-left: 3px solid $persianGreen;
+		}
+
+		#{$self} {
+			&__content {
+				width: 100%;
+			}
+		}
+	}
+
+	&--links {
+		#{$self} {
+			&__title {
+				color: $dark;
+				transition: opacity 0.3s ease;
+
+				@include hover {
+					opacity: 0.8;
+				}
+			}
+
+			&__content {
+				width: 100%;
+				padding: 37px 36px 27px 30px;
+
+				@include max(md) {
+					padding: 20px;
+				}
+			}
+		}
+	}
+}

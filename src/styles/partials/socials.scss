@@ -11,6 +11,7 @@
 		font-size: 12px;
 		line-height: 21px;
 		text-transform: lowercase;
+		margin-bottom: 10px;
 
 		a {
 			color: $aliceBlue;
@@ -23,6 +24,7 @@
 
 	&--row {
 		flex-direction: row;
+		flex-wrap: wrap;
 		border-left: none;
 		padding-left: 0;
 		padding-bottom: 0;
@@ -42,10 +44,10 @@
 					font-weight: 700;
 				}
 
-				+ #{$self}__item {
-					border-left: 1px solid $persianGreen;
-					margin-left: 13px;
-					padding-left: 12px;
+				&:not(:last-child) {
+					border-right: 1px solid $persianGreen;
+					margin-right: 13px;
+					padding-right: 12px;
 				}
 
 				a {

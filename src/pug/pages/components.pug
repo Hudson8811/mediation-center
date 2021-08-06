@@ -47,3 +47,13 @@ block main
 				li.news-list__item.more-card.more-card--green
 					+title('Новости и&nbsp;события', 'h3', 'more-card__title title--size-md')
 					+arrow-link('Читать <br>все новости', 'more-card__link', 'news.html')
+
+			.person-list
+				+person-card('1', 'Анна <br> Cорокина', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'person-card--small person-list__item')
+				+person-card('2', 'Лидия <br> Макшейн', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', ' person-card--small person-list__item')
+				+person-card('3', 'Пери <br> Измайлова', 'Медиатор', 'person-card--small person-list__item')
+			.event-list
+				+event-card('', 'мероприятия <br> и образовательные программы', '', 'event-card--links event-list__item', '#', true)
+				+event-card('1', 'Длинное название программы обучения или мероприятия', '20 сентября 2021', 'event-list__item', '#')
+				+event-card('2', 'Название мероприятия', '20 сентября 2021', 'event-card--big-image event-list__item', '#')
+				+event-card('', 'Очень длинное название программы обучения, вариант без картинки', '07 сентября 2021   / старт обучения', 'event-card--border-wide event-list__item', '#')
