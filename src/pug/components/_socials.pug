@@ -1,0 +1,5 @@
+mixin socials(arr, className)
+	.socials(class= className)
+		each item in arr
+			.socials__item
+				a(href='#', target='_blank')= item

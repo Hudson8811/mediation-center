@@ -2,6 +2,7 @@
 @import "base/var";
 @import "base/reset";
 @import "base/fonts";
+@import "base/animation";
 
 /* mixin */
 @import "base/mixin";
@@ -14,13 +15,15 @@
 /* components */
 @import "partials/header";
 @import "partials/footer";
+@import "partials/socials";
+@import "partials/button";
 @import "partials/title";
 @import "partials/arrow-link";
 @import "partials/navigation";
 @import "partials/overlay";
 
 /*blocks*/
-
+@import "blocks/download";
 @import "blocks/inner-page";
 @import "blocks/more-card";
 @import "blocks/news-card";

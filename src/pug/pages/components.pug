@@ -1,37 +1,49 @@
 extends ../layouts/default
 
 block vars
-  -
-    const page = {
-      title: 'Общие компоненты',
-      isComponents: true
-    };
+	-
+		const page = {
+		title: 'Общие компоненты',
+		isComponents: true
+		};
 
 block main
-  include ../partials/_header
-  .container
-    .component-wrapper
-      +title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--upper title--green')
-      +title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--upper title--size-md')
-      +title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--size-sm')
-      +title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--upper title--size-xs')
-    .component-wrapper
-      ul.news-list
-        - let i = 1;
-        while i <= 3
-          li.news-list__item.news-card(class= (i % 2 !== 0) ? ' news-card--bordered' : '')
-            if i % 2 === 0
-              .news-card__image
-                img(src="images/news-1.jpg", srcset="images/news-1@2x.jpg 2x", width="271", height="109", alt="")
-            time.news-card__date(datetime="2021-07-10") 10.07.2021
-            +title('Заголовок новости центра медиации при рспп', 'h3', 'news-card__title title--upper title--size-xs title--green', 'news.html')
-            .news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            a.news-card__link(href="news.html") Читать новость >
+	section.download.download
+		.container.download__container
+			.download__text алгоритм проведения медиации
+			+button('скачать', 'button--border download__btn') скачать
+	section.download.download--narrow
+		.container.download__container
+			.download__text медиативно-арбитражная оговорка
+			+button('скачать', 'button--border download__btn') скачать
+	.container
+		.component-wrapper
+			+socials(['Instagram', 'Facebook', 'Youtube'])
+			br
+			+socials(['Facebook', 'Instagram', 'Youtube'], 'socials--row')
+			+button('подать заявку на медиацию')
+			+button('скачать', 'button--border')
+			+button('смотреть документы', 'button--white', 'arrow')
+		.component-wrapper
+			+title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--upper title--green')
+			+title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--upper title--size-md')
+			+title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--size-sm')
+			+title('Заголовок последней новости центра медиации при рспп', 'h2', 'title--upper title--size-xs')
+		.component-wrapper
+			ul.news-list
+				- let i = 1;
+				while i <= 3
+					li.news-list__item.news-card(class= (i % 2 !== 0) ? ' news-card--bordered' : '')
+						if i % 2 === 0
+							.news-card__image
+								img(src="images/news-1.jpg", srcset="images/news-1@2x.jpg 2x", width="271", height="109", alt="")
+						time.news-card__date(datetime="2021-07-10") 10.07.2021
+						+title('Заголовок новости центра медиации при рспп', 'h3', 'news-card__title title--upper title--size-xs title--green', 'news.html')
+						.news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						a.news-card__link(href="news.html") Читать новость >
 
-          - i++;
+					- i++;
 
-        li.news-list__item.more-card.more-card--green 
-          +title('Новости и&nbsp;события', 'h3', 'more-card__title title--size-md')
-          +arrow-link('Читать <br>все новости', 'more-card__link', 'news.html')
-
-
+				li.news-list__item.more-card.more-card--green
+					+title('Новости и&nbsp;события', 'h3', 'more-card__title title--size-md')
+					+arrow-link('Читать <br>все новости', 'more-card__link', 'news.html')

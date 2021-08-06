@@ -1,0 +1,57 @@
+.socials {
+	$self: &;
+
+	display: inline-flex;
+	flex-direction: column;
+	border-left: 1px solid $aliceBlue;
+	padding-left: 14px;
+	padding-bottom: 12px;
+
+	&__item {
+		font-size: 12px;
+		line-height: 21px;
+		text-transform: lowercase;
+
+		a {
+			color: $aliceBlue;
+
+			@include hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&--row {
+		flex-direction: row;
+		border-left: none;
+		padding-left: 0;
+		padding-bottom: 0;
+
+		#{$self} {
+			&__item {
+				font-size: 18px;
+				line-height: 22px;
+				text-transform: none;
+
+				@include max(sm) {
+					font-size: 16px;
+					line-height: 18px;
+				}
+
+				&:first-child {
+					font-weight: 700;
+				}
+
+				+ #{$self}__item {
+					border-left: 1px solid $persianGreen;
+					margin-left: 13px;
+					padding-left: 12px;
+				}
+
+				a {
+					color: $persianGreen;
+				}
+			}
+		}
+	}
+}
