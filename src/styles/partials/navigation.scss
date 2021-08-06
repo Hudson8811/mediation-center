@@ -1,0 +1,45 @@
+.navigation {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include max(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: block;
+    margin-right: 16px;
+    line-height: 1;
+
+    @include max(sm) {
+      margin-right: 0;
+      margin-top: 16px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: (15 / 12);
+    color: $dark;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: $persianGreen;
+    }
+  }
+}
