@@ -3,10 +3,12 @@ extends ../layouts/default
 block vars
   -
     const page = {
-      title: 'Шаблон страницы'
+      title: 'Шаблон страницы',
+      order: 0
     };
 
 block main
   .inner-page 
-    h1.inner-page__title.title= page.title 
-  .inner-page__main
+    .inner-page__container.container
+      h1.inner-page__title.title.title--green.title--upper= page.title 
+      .inner-page__main

@@ -1,48 +1,52 @@
 .title {
-	font-size: 36px;
-	line-height: (43.57 / 36);
-	font-weight: 600;
-	color: $persianGreen;
+  font-size: 36px;
+  line-height: (43.57 / 36);
+  font-weight: 600;
+  color: $persianGreen;
 
-	a {
-		color: $dark;
-		text-decoration: none;
-		transition: color 0.3s ease;
+  a {
+    color: $dark;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
-		@include hover {
-			color: lighten($dark, 5%);
-		}
-	}
+    @include hover {
+      color: lighten($dark, 5%);
+    }
+  }
 
-	&--upper {
-		text-transform: uppercase;
-	}
+  &--upper {
+    text-transform: uppercase;
+  }
 
-	&--green {
-		color: $persianGreen;
+  &--green {
+    color: $persianGreen;
 
-		a {
-			color: $persianGreen;
+    a {
+      color: $persianGreen;
 
-			@include hover {
-				color: lighten($persianGreen, 5%);
-			}
-		}
-	}
+      @include hover {
+        color: lighten($persianGreen, 5%);
+      }
+    }
+  }
 
-	&--size-md {
-		font-size: 32px;
-		line-height: (38.73 / 32);
-	}
+  &--bold {
+    font-weight: 700;
+  }
 
-	&--size-sm {
-		font-size: 24px;
-		line-height: (29 / 24);
-	}
+  &--size-md {
+    font-size: 32px;
+    line-height: (38.73 / 32);
+  }
 
-	&--size-xs {
-		font-size: 18px;
-		line-height: (32 / 18);
-		font-weight: 700;
-	}
+  &--size-sm {
+    font-size: 24px;
+    line-height: (29 / 24);
+  }
+
+  &--size-xs {
+    font-size: 18px;
+    line-height: (32 / 18);
+    font-weight: 700;
+  }
 }

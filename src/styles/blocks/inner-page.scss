@@ -1,4 +1,62 @@
 .inner-page {
+  $self: &;
+  padding: 65px 0;
+
+  &--news {
+    #{$self}__container {
+      padding-left: 115px;
+
+      @include max(lg) {
+        padding-left: 15px;
+      }
+    }
+
+    #{$self}__title {
+      @include max(lg) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__container {
+  }
+
   &__title {
+    width: 100%;
+    margin-bottom: 56px;
+  }
+
+  &__main {
+    position: relative;
+  }
+
+  &__date {
+    position: absolute;
+    left: -100px;
+    top: 0;
+
+    font-size: 12px;
+    line-height: (15 / 12);
+    font-weight: 500;
+
+    @include max(lg) {
+      position: static;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    margin-top: 50px;
+    line-height: (32 / 18);
   }
 }

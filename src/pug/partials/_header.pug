@@ -5,7 +5,7 @@ header.header
     .header__logo 
       a.header__logo-rspp(href="https://www.rspp.ru/", target="_blank") 
         img(src="images/rspp-logo.svg", width="50", height="50" alt="Логотип РСПП")
-      if currentPage && currentPage === 1
+      if page.order && page.order === 1
         a.header__logo-mc
           img(src="images/mc-logo.svg", width="149", height="52" alt="Логотип центра медиации")
       else 
@@ -18,9 +18,12 @@ header.header
       nav.header__navigation.navigation
         ul.navigation__list 
           each item in NAV_ITEMS 
-            if currentPage && currentPage === item.currentPage
+            if page.order && page.order === item.currentPage && !page.isChild
               li.navigation__item.navigation__item--current 
                 a.navigation__link= item.text
+            else if page.order && page.order === item.currentPage && page.isChild
+              li.navigation__item.navigation__item--current 
+                a.navigation__link(href= item.url)= item.text
             else
               li.navigation__item
                 a.navigation__link(href= item.url)= item.text
