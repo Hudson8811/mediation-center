@@ -1,0 +1,25 @@
+.more-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 36px 38px 30px;
+  border: solid 3px $dark;
+
+  @include max(md) {
+    padding: 24px;
+  }
+
+  &--green {
+    border-color: $persianGreen;
+  }
+
+  &__title {
+    margin-bottom: auto;
+    text-transform: lowercase;
+  }
+
+  &__link {
+    margin-top: 20px;
+  }
+}

@@ -8,16 +8,18 @@
 
 /*libs*/
 
-
 /* main */
 @import "partials/main";
 
 /* components */
 @import "partials/header";
 @import "partials/footer";
-
+@import "partials/title";
+@import "partials/arrow-link";
 
 /*blocks*/
 
-
-
+@import "blocks/inner-page";
+@import "blocks/more-card";
+@import "blocks/news-card";
+@import "blocks/news-list";

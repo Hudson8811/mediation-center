@@ -1,0 +1,27 @@
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  margin-top: -53px !important;
+  margin-left: -30px !important;
+
+  @include max(xs) {
+    margin-left: 0 !important;
+  }
+
+  &__item {
+    width: 100%;
+    max-width: calc(25% - 30px);
+    margin-left: 30px;
+    margin-top: 53px;
+
+    @include max(md) {
+      max-width: calc(50% - 30px);
+    }
+
+    @include max(xs) {
+      max-width: none;
+      margin-left: 0;
+    }
+  }
+}
