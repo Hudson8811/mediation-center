@@ -1,1 +1,26 @@
-header.header
+- const NAV_ITEMS = [{text: 'О центре', url: 'home.html', currentPage: 1}, {text: 'Документы', url: 'documents.html', currentPage: 2}, {text: 'Медиаторы', url: 'mediators.html', currentPage: 3}, {text: 'Практики', url: 'practices.html', currentPage: 4}, {text: 'Партнёры', url: 'partners.html', currentPage: 5}, {text: 'Обучение', url: 'training.html', currentPage: 6}, {text: 'Мероприятия', url: 'events.html', currentPage: 7}, {text: 'О медиации', url: 'about-mediation.html', currentPage: 8}, {text: 'Новости', url: 'news.html', currentPage: 9}, {text: 'Контакты', url: 'contacts.html', currentPage: 10} ];
+
+header.header 
+  .header__container.container
+    .header__logo 
+      a.header__logo-rspp(href="https://www.rspp.ru/", target="_blank") 
+        img(src="images/rspp-logo.svg", width="50", height="50" alt="Логотип РСПП")
+      if currentPage && currentPage === 1
+        a.header__logo-mc
+          img(src="images/mc-logo.svg", width="149", height="52" alt="Логотип центра медиации")
+      else 
+        a.header__logo-mc(href="home.html")
+          img(src="images/mc-logo.svg", width="149", height="52" alt="Логотип центра медиации")
+    button.header__toggle(type="button")
+      span.header__toggle-line
+      span.visually-hidden Меню
+    .header__mobile-canvas 
+      nav.header__navigation.navigation
+        ul.navigation__list 
+          each item in NAV_ITEMS 
+            if currentPage && currentPage === item.currentPage
+              li.navigation__item.navigation__item--current 
+                a.navigation__link= item.text
+            else
+              li.navigation__item
+                a.navigation__link(href= item.url)= item.text
