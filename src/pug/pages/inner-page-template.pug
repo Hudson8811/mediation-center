@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Шаблон страницы'
+    };
+
+block main
+  .inner-page 
+    h1.inner-page__title.title= page.title 
+  .inner-page__main

@@ -9,7 +9,6 @@
 
 /*libs*/
 
-
 /* main */
 @import "partials/main";
 
@@ -21,8 +20,12 @@
 @import "partials/button";
 @import "partials/link-arrow";
 
+@import "partials/title";
+@import "partials/arrow-link";
 
 /*blocks*/
 @import "blocks/download";
-
-
+@import "blocks/inner-page";
+@import "blocks/more-card";
+@import "blocks/news-card";
+@import "blocks/news-list";

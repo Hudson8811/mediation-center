@@ -1,3 +1,7 @@
-mixin title(title, tag, className)
-	- let tg = tag ? tag : 'h2';
-	#{tg}(class= className ? className + ' title' : 'title')!= title
+mixin title(title, tag, className, url)
+  - let tg = tag ? tag : 'h2';
+  if url
+    #{tg}(class= className ? className + ' title' : 'title')
+      a(href= url)!= title
+  else
+    #{tg}(class= className ? className + ' title' : 'title')!= title
