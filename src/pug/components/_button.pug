@@ -1,0 +1,13 @@
+mixin button(text, className, svgName, href)
+	if href
+		a.button(href=href, class=className)&attributes(attributes)
+			span!= text
+			if svgName
+				svg
+					use(xlink:href=`./images/sprite.svg#${svgName}`)
+	else
+		button.button(class=className)&attributes(attributes)
+			span!= text
+			if svgName
+				svg
+					use(xlink:href=`./images/sprite.svg#${svgName}`)

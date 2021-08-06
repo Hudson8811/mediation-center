@@ -2,6 +2,7 @@
 @import "base/var";
 @import "base/reset";
 @import "base/fonts";
+@import "base/animation";
 
 /* mixin */
 @import "base/mixin";
@@ -15,9 +16,13 @@
 /* components */
 @import "partials/header";
 @import "partials/footer";
+@import "partials/title";
+@import "partials/socials";
+@import "partials/button";
+@import "partials/link-arrow";
 
 
 /*blocks*/
-
+@import "blocks/download";
 
 

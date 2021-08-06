@@ -27,7 +27,15 @@
   }
 }
 
-
+/* ховер */
+@mixin hover {
+	@media (min-width: 1080px) {
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}
+}
 
 /* адаптив */
 @function _get-media-width($width, $maxmin) {

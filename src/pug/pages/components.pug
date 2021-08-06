@@ -1,13 +1,30 @@
 extends ../layouts/default
 
 block vars
-  -
-    const page = {
-      title: 'Общие компоненты',
-      isComponents: true
-    };
+	-
+		const page = {
+		title: 'Общие компоненты',
+		isComponents: true
+		};
 
 block main
-  .container
-    .component-wrapper
-     
+	.container
+		.component-wrapper
+			+title('Обучение', 'h2', 'title--upper')
+			+socials(['Instagram', 'Facebook', 'Youtube'])
+			br
+			+socials(['Facebook', 'Instagram', 'Youtube'], 'socials--row')
+			+button('подать заявку на медиацию')
+			+button('скачать', 'button--border')
+			+button('смотреть документы', 'button--white', 'arrow')
+			+link-arrow('все мероприятия', '#', 'arrow-medium')
+			br
+			+link-arrow('Основные отличия медиации от судебного разбирательства', '#', 'arrow-big', 'link-arrow--long')
+	section.download.download
+		.container.download__container
+			.download__text алгоритм проведения медиации
+			+button('скачать', 'button--border download__btn') скачать
+	section.download.download--narrow
+		.container.download__container
+			.download__text медиативно-арбитражная оговорка
+			+button('скачать', 'button--border download__btn') скачать

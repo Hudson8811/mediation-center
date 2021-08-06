@@ -1,0 +1,24 @@
+.title {
+	font-size: 36px;
+	line-height: 44px;
+	font-weight: 600;
+	color: $persianGreen;
+
+	&--upper {
+		text-transform: uppercase;
+	}
+
+	&--dark {
+		color: $dark;
+	}
+
+	&--medium {
+		font-size: 32px;
+		line-height: 39px;
+	}
+
+	&--small {
+		font-size: 18px;
+		line-height: 28px;
+	}
+}

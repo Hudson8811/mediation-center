@@ -1,0 +1,58 @@
+.download {
+	$self: &;
+
+	background-color: $persianGreen;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		@include max(md) {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+	}
+
+	&__text {
+		font-size: 32px;
+		line-height: 39px;
+		color: $white;
+		margin-right: 10px;
+
+		@include max(md) {
+			font-size: 26px;
+			line-height: 28px;
+		}
+
+		@include max(md) {
+			font-size: 20px;
+			line-height: 24px;
+		}
+	}
+
+	&__btn {
+		width: 270px;
+
+		@include max(md) {
+			width: 180px;
+		}
+	}
+
+	&--narrow {
+		background-color: transparent;
+
+		#{$self} {
+			&__container {
+				background-color: $persianGreen;
+				padding: 40px 84px;
+
+				@include max(md) {
+					padding: 25px 15px;
+				}
+			}
+		}
+	}
+}

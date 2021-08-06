@@ -1,0 +1,53 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100%;
+	padding: 13px;
+	background-color: $persianGreen;
+	border: 1px solid $persianGreen;
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: 600;
+	color: $white;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+
+	@include max(sm) {
+		padding: 8px 13px;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	@include hover {
+		background-color: rgba($persianGreen, 0.85);
+	}
+
+	svg {
+		align-self: flex-end;
+		width: 26px;
+		height: 16px;
+		fill: $white;
+		margin-left: 10px;
+		padding-bottom: 4px;
+	}
+
+	&--border {
+		border-color: $white;
+	}
+
+	&--white {
+		background-color: $white;
+		border-color: $persianGreen;
+		color: $persianGreen;
+
+		@include hover {
+			background-color: rgba($persianGreen, 0.05);
+		}
+
+		svg {
+			fill: $persianGreen;
+		}
+	}
+}
