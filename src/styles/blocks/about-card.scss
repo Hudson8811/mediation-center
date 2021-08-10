@@ -1,0 +1,100 @@
+.about-card {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 68px 52px;
+  border: 3px solid $persianGreen;
+
+  @include max(lg) {
+    padding: 40px 50px;
+  }
+
+  @include max(sm) {
+    padding: 25px 30px;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: (32 / 18);
+    margin-top: 37px;
+
+    @include max(md) {
+      font-size: 14px;
+    }
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  &__arrow-link {
+    margin-top: 28px;
+
+    @include max(md) {
+      font-size: 16px;
+    }
+
+    svg {
+      @include max(md) {
+        width: 130px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 42px !important;
+
+    &-item {
+      font-size: 18px;
+      line-height: (32 / 18);
+      padding-left: 30px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 13px;
+        left: 12px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $dark;
+      }
+
+      &:first-child {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.about-mediation {
+  .about-card {
+    margin-bottom: 50px;
+
+    @include max(sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .download {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include max(sm) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__title {
+    @include max(md) {
+      font-size: 28px;
+    }
+
+    @include max(sm) {
+      font-size: 20px;
+    }
+  }
+}

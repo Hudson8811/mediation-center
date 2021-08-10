@@ -1,0 +1,47 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'О медиации',
+      order: 8
+    };
+
+    
+
+block main
+  .inner-page.inner-page--about-mediation.about-mediation
+    .inner-page__container.container
+      h1.inner-page__title.title.title--green.title--upper= page.title
+ 
+      .inner-page__main
+        .about-card
+          +title('медиация и её преимущества', '', 'title--dark title--upper title--bold about-mediation__title')
+          p.about-card__text 
+            b Медиация 
+            | (лат. “mediare” - посредничать) – это способ урегулирования споров при содействии профессионального нейтрального посредника (медиатора) на основе добровольного согласия сторон в целях достижения ими взаимоприемлемого решения.
+          +arrow-link('Узнать больше о медиации и ее преимуществах', 'arrow-link--large-arrow arrow-link--tt-none about-card__arrow-link')
+        section.download.download--narrow
+          .container.download__container
+            .download__text медиативно-арбитражная оговорка
+            +button('скачать', 'button--border download__btn') скачать
+        .about-card
+          +title('когда медиация (не)возможна', '', 'title--dark title--upper title--bold about-mediation__title')
+          ul.about-card__list При проведении проверки медиабельности спора мы в Центре медиации при РСПП руководствуемся:
+            li.about-card__list-item Совместным информационным письмом Центра медиации при РСПП и Федеральной службы по финансовому мониторингу “О повышении внимания медиаторов к заключению фиктивных сделок” от 23 июля 2021
+            li.about-card__list-item Чек-листом, разработанным нами совместно с проектом “СБЕР ЮРИСТ” в соответствии с указанным выше информационным письмом
+          +arrow-link('Все о процедура медиации', 'arrow-link--large-arrow arrow-link--tt-none about-card__arrow-link')
+        section.download.download--narrow
+          .container.download__container
+            .download__text чек-лист проверки характера спора
+            +button('скачать', 'button--border download__btn') скачать
+        .about-card
+          +title('роль и задачи медиатора', '', 'title--dark title--upper title--bold about-mediation__title')
+          p.about-card__text Роль медиатора – организация конструктивного взаимодействия конфликтующих сторон, направленного на разрешение их конфликта. Для профессионального проведения процедуры медиации медиатор должен реализовывать свои задачи и придерживаться ряда табу.
+          +arrow-link('Узнать все про роли и задачи медиатора', 'arrow-link--large-arrow arrow-link--tt-none about-card__arrow-link')
+        section.download.download--narrow
+          .container.download__container
+            .download__text алгоритм проведения медиации
+            +button('скачать', 'button--border download__btn') скачать
+
+
