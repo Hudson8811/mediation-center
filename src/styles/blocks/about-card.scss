@@ -1,6 +1,7 @@
 .about-card {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 48px 68px 52px;
   border: 3px solid $persianGreen;
 
@@ -43,11 +44,14 @@
   }
 
   &__list {
+    font-size: 18px;
     margin-top: 42px !important;
+    line-height: (32 / 18);
+    @include max(md) {
+      font-size: 14px;
+    }
 
     &-item {
-      font-size: 18px;
-      line-height: (32 / 18);
       padding-left: 30px;
       position: relative;
 
@@ -65,36 +69,6 @@
       &:first-child {
         margin-top: 4px;
       }
-    }
-  }
-}
-
-.about-mediation {
-  .about-card {
-    margin-bottom: 50px;
-
-    @include max(sm) {
-      margin-bottom: 30px;
-    }
-  }
-
-  .download {
-    &:not(:last-child) {
-      margin-bottom: 50px;
-
-      @include max(sm) {
-        margin-bottom: 30px;
-      }
-    }
-  }
-
-  &__title {
-    @include max(md) {
-      font-size: 28px;
-    }
-
-    @include max(sm) {
-      font-size: 20px;
     }
   }
 }

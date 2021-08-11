@@ -1,0 +1,26 @@
+.text-block {
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: (32 / 18);
+
+    @include max(md) {
+      font-size: 14px;
+    }
+
+    &--green {
+      color: $persianGreen;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: (32 / 18);
+
+    @include max(md) {
+      font-size: 14px;
+    }
+  }
+}
