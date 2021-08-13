@@ -8,7 +8,7 @@ block vars
     };
 
     const FIELDS_1 = [
-      {hint: 'ФИО стороны-заявителя', type: 'text', name: 'applicant-name'},
+      {hint: 'ФИО стороны-заявителя', type: 'text', name: 'applicant-name', js: '__js_side-name'},
       {hint: 'ФИО представителя стороны-заявителя', type: 'text', name: 'representative-applicant-name', js: '__js_agent'},
       {hint: 'ИНН стороны-заявителя', type: 'number', name: 'applicant-tax-number', js: '__js_tax-num'},
       {hint: 'Контактный телефон стороны-заявителя', type: 'tel', name: 'applicant-phone'},
@@ -16,7 +16,7 @@ block vars
     ];
     
     const FIELDS_2 = [
-      {hint: 'ФИО стороны-котрагента', type: 'text', name: 'counterparty-name'},
+      {hint: 'ФИО стороны-котрагента', type: 'text', name: 'counterparty-name', js: '__js_side-name'},
       {hint: 'ФИО представителя стороны-котрагента', type: 'text', name: 'representative-counterparty-name', js: '__js_agent'},
       {hint: 'ИНН стороны-котрагента', type: 'number', name: 'counterparty-tax-number', js: '__js_tax-num'},
       {hint: 'Контактный телефон стороны-котрагента', type: 'tel', name: 'counterparty-phone'},
@@ -36,7 +36,7 @@ block main
             .application__row
               label.field.application__field.application__field--size-third.application__field--size-mdfull
                 span.field__hint Вид медиации
-                select.field__input.__js_select(name="mediation-type") 
+                select.field__input.__js_select.__js_mediation-type(name="mediation-type") 
                   each item, index in ['Договорная медиация', 'Медиация бизнес-конфликта']
                     option(value= index + 1)= item
               label.field.application__field.application__field--size-two-thirds
@@ -47,7 +47,7 @@ block main
 
               label.field.application__field
                 span.field__hint Какие меры по урегулированию спора предпринимались ранее?
-                select.field__input.__js_select(name="settlement-measures", multiple) 
+                select.field__input.__js_measures(name="settlement-measures", multiple) 
                   each item, index in ['Переговоры', 'Направлена претензия', 'Спор находится в суде', 'Не предпринимались']
                     if index === 3
                       option(value= index + 1, selected)= item
@@ -78,13 +78,13 @@ block main
                   span.field__hint= item.hint 
                   input.field__input(type= item.type, name= item.name)
           
-          .application__section.__js_counterparty
+          .application__section
             +title('Информация о стороне-контрагенте', 'div', 'application__title title--green title--upper title--size-xs')
             //-.application__title Информация о стороне-контрагенте
             .application__row
               label.field.application__field.application__field--size-third.application__field--size-mdfull
                 span.field__hint Количество сторон-контрагентов
-                select.field__input.__js_select(name="sides-number") 
+                select.field__input.__js_select.__js_sides-count(name="sides-number") 
                   each item, index in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
                     if index === 1
                       option(value= index + 1, selected)= item
@@ -111,25 +111,26 @@ block main
                     span.field__hint= item.hint 
                     input.field__input(type= item.type, name= item.name)
               
-            .application__group
-              .application__row
-                label.field.application__field.application__field--size-third
-                  span.field__hint Сторона-контрагент 2
-                  select.field__input.__js_select.__js_legal-status(name="counterparty2") 
-                    each item, index in ['Юридическое лицо', 'ИП', 'Физическое лицо']
-                      option(value= index + 1)= item
+            .application__sides-wrapper.__js_counterparty
+              .application__group
+                .application__row
+                  label.field.application__field.application__field--size-third
+                    span.field__hint Сторона-контрагент 2
+                    select.field__input.__js_select.__js_legal-status(name="counterparty2") 
+                      each item, index in ['Юридическое лицо', 'ИП', 'Физическое лицо']
+                        option(value= index + 1)= item
 
-                label.field.application__field.application__field--size-third
-                  span.field__hint Согласие на участие в процедуре медиации
-                  select.field__input.__js_select(name="mediation-consent2") 
-                    each item, index in ['Согласна', 'Не обсуждали эту возможность', 'Не согласна']
-                      option(value= index + 1)= item
-              .application__row
-                each item in FIELDS_2
-                  - const js3 = item.js || '';
-                  label.field.application__field.application__field--size-third(class= js3)
-                    span.field__hint= item.hint 
-                    input.field__input(type= item.type, name= item.name + '2')
+                  label.field.application__field.application__field--size-third
+                    span.field__hint Согласие на участие в процедуре медиации
+                    select.field__input.__js_select(name="mediation-consent2") 
+                      each item, index in ['Согласна', 'Не обсуждали эту возможность', 'Не согласна']
+                        option(value= index + 1)= item
+                .application__row
+                  each item in FIELDS_2
+                    - const js3 = item.js || '';
+                    label.field.application__field.application__field--size-third(class= js3)
+                      span.field__hint= item.hint 
+                      input.field__input(type= item.type, name= item.name + '2')
 
           .application__bottom 
             .application__checkbox.custom-checkbox 

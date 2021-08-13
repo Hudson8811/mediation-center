@@ -1,5 +1,19 @@
 .field {
+  $self: &;
   display: block;
+
+  &--disabled {
+    //pointer-events: none;
+    cursor: not-allowed;
+
+    #{$self}__hint {
+      color: rgba($dark, 0.5);
+    }
+    #{$self}__input {
+      background-color: #fff !important;
+      cursor: not-allowed;
+    }
+  }
 
   &__hint {
     display: inline-block;
@@ -102,5 +116,14 @@
   .choices[data-type*="select-one"].is-open::after,
   .choices[data-type*="select-multiple"].is-open::after {
     transform: scale(1, -1);
+  }
+
+  .choices.is-disabled .choices__inner {
+    background-color: #ffffff;
+    cursor: not-allowed;
+  }
+  .choices.is-disabled .choices__input {
+    background-color: transparent;
+    cursor: not-allowed;
   }
 }

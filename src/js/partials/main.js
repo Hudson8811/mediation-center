@@ -3,35 +3,35 @@ window.addEventListener('load', () => {
 
   selects.forEach(it => {
     const choices = new Choices(it, {
-      silent: false,
-      items: [],
-      choices: [],
-      renderChoiceLimit: -1,
-      maxItemCount: -1,
-      addItems: true,
-      addItemFilter: null,
-      removeItems: true,
-      removeItemButton: false,
-      editItems: false,
-      duplicateItemsAllowed: true,
-      delimiter: ',',
-      paste: true,
+      //silent: false,
+      //items: [],
+      //choices: [],
+      //renderChoiceLimit: -1,
+      //maxItemCount: -1,
+      //addItems: true,
+      //addItemFilter: null,
+      //removeItems: true,
+      //removeItemButton: false,
+      //editItems: false,
+      //duplicateItemsAllowed: true,
+      //delimiter: ',',
+      //paste: true,
       searchEnabled: false,
-      searchChoices: true,
-      searchFloor: 1,
-      searchResultLimit: 4,
-      searchFields: ['label', 'value'],
-      position: 'auto',
-      resetScrollPosition: true,
+      //searchChoices: true,
+      //searchFloor: 1,
+      //searchResultLimit: 4,
+      //searchFields: ['label', 'value'],
+      //position: 'auto',
+      //resetScrollPosition: true,
       shouldSort: false,
       shouldSortItems: false,
       //sorter: () => {...},
-      placeholder: true,
-      placeholderValue: null,
-      searchPlaceholderValue: null,
-      prependValue: null,
-      appendValue: null,
-      renderSelectedChoices: 'auto',
+      //placeholder: true,
+      //placeholderValue: null,
+      //searchPlaceholderValue: null,
+      //prependValue: null,
+      //appendValue: null,
+      //renderSelectedChoices: 'auto',
       loadingText: 'Загрузка...',
       noResultsText: 'Ничего не найдено',
       noChoicesText: 'Нет элементов для выбора',
@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
       valueComparer: (value1, value2) => {
         return value1 === value2;
       },
-      classNames: {
+      /*classNames: {
         containerOuter: 'choices',
         containerInner: 'choices__inner',
         input: 'choices__input',
@@ -72,14 +72,14 @@ window.addEventListener('load', () => {
         loadingState: 'is-loading',
         noResults: 'has-no-results',
         noChoices: 'has-no-choices'
-      },
+      },*/
       // Choices uses the great Fuse library for searching. You
       // can find more options here: https://github.com/krisk/Fuse#options
-      fuseOptions: {
-        include: 'score'
-      },
-      callbackOnInit: null,
-      callbackOnCreateTemplates: null
+      //fuseOptions: {
+      //  include: 'score'
+      //},
+      //callbackOnInit: null,
+      //callbackOnCreateTemplates: null
     });
   })
 });
