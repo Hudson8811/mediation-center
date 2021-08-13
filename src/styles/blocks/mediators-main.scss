@@ -1,0 +1,151 @@
+.mediators-main {
+	padding: 63px 0;
+
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -15px;
+
+		@include max(md) {
+			flex-direction: column;
+			margin: 0;
+		}
+
+		+ .mediators-main__block {
+			margin-top: 87px;
+
+			@include max(md) {
+				margin-top: 45px;
+			}
+		}
+	}
+
+	&__left,
+	&__right {
+		margin: 0 15px;
+
+		@include max(md) {
+			margin: 0;
+		}
+	}
+
+	&__left {
+		width: calc(25% - 15px);
+
+		@include max(md) {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		width: calc(75% - 15px);
+
+		@include max(md) {
+			width: 100%;
+			margin-top: 20px;
+		}
+	}
+
+	&__title {
+		@include max(md) {
+			text-align: center;
+		}
+	}
+
+	&__tabs {
+		margin-top: 46px;
+
+		@include max(md) {
+			margin-top: 30px;
+		}
+
+		@include max(md) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__tabs-item {
+		display: block;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: color 0.3s ease;
+
+		@include max(md) {
+			margin: 0 10px 10px !important;
+		}
+
+		@include hover {
+			color: $persianGreen;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 22px;
+
+			@include max(md) {
+				margin-bottom: 0;
+			}
+		}
+
+		&.all {
+			font-weight: 700;
+
+			@include max(md) {
+				font-weight: 400;
+			}
+		}
+
+		&.active {
+			display: flex;
+			align-items: center;
+
+			@include max(md) {
+				font-weight: 700;
+			}
+
+			&::before {
+				content: '';
+				display: block;
+				width: 26px;
+				height: 16px;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='26' height='16' fill='%23009a9d' viewBox='0 0 26 16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.29289L19.3431 0.928932C18.9526 0.538408 18.3195 0.538408 17.9289 0.928932C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM0 9H25V7H0V9Z' /%3e%3c/svg%3e ");
+				background-repeat: no-repeat;
+				background-position: center;
+				margin-right: 15px;
+
+				@include max(md) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__note {
+		font-size: 15px;
+		line-height: 24px;
+		color: $persianGreen;
+		margin-top: 28px;
+
+		@include max(md) {
+			text-align: center;
+		}
+	}
+
+	&__person {
+		width: calc(33.3333% - 30px);
+		margin: 0 15px 30px;
+
+		@include max(sm) {
+			width: calc(50% - 30px);
+		}
+
+		@include max(xs) {
+			width: 100%;
+			margin: 0 0 30px;
+		}
+	}
+}
