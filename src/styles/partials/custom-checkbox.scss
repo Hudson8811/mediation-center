@@ -1,0 +1,62 @@
+.custom-checkbox {
+  input {
+  }
+
+  input:focus ~ &__label {
+    &::before {
+      background-color: $smoky;
+    }
+  }
+
+  input:checked ~ &__label {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 3px;
+      background-color: $dark;
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+
+    font-size: 15px;
+    line-height: (18 / 15);
+
+    cursor: pointer;
+
+    a {
+      color: $persianGreen;
+      transition: color 0.3s ease;
+
+      @include hover {
+        color: lighten($persianGreen, 5%);
+      }
+    }
+
+    @include hover {
+      &::before {
+        background-color: $smoky;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #ffffff;
+
+      transition: background-color 0.3s ease;
+    }
+  }
+}
