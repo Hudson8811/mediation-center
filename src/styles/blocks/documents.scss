@@ -1,0 +1,47 @@
+.documents-page {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+
+	&-text{
+		display: block;
+		text-align: center;
+	}
+	&-arrow{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 16px;
+		width:35px;
+	}
+
+	@include max(xs) {
+		margin: 0;
+	}
+
+	&__item {
+		padding: 35px 35px 22px;
+		border:1px solid #009A9D;
+		box-sizing:border-box;
+		display: block;
+		width: calc(33.3333% - 30px);
+		margin: 0 15px 30px;
+		color: #3C4C54;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 600;
+
+		@include max(md) {
+			width: calc(33.3333% - 30px);
+		}
+
+		@include max(sm) {
+			width: calc(50% - 30px);
+		}
+
+		@include max(xs) {
+			width: 100%;
+			margin: 0 0 30px;
+		}
+	}
+}
