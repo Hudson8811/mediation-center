@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/main.min.css" rel="stylesheet">
+    <title>Заявка на медиацию</title>
+  </head>
+  <body>
+    <header class="header"> 
+      <div class="header__container container">
+        <div class="header__logo"> <a class="header__logo-rspp" href="https://www.rspp.ru/" target="_blank"> <img src="images/rspp-logo.svg" width="50" height="50" alt="Логотип РСПП"></a><a class="header__logo-mc" href="home.html"><img src="images/mc-logo.svg" width="149" height="52" alt="Логотип центра медиации"></a>
+        </div>
+        <button class="header__toggle" type="button"><span class="header__toggle-line"></span><span class="visually-hidden">Меню</span></button>
+        <div class="header__mobile-canvas"> 
+          <nav class="header__navigation navigation">
+            <ul class="navigation__list"> 
+              <li class="navigation__item"><a class="navigation__link" href="home.html">О центре</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="documents.html">Документы</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="mediators.html">Медиаторы</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="practices.html">Практики</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="partners.html">Партнёры</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="training.html">Обучение</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="events.html">Мероприятия</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="about-mediation.html">О медиации</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="news.html">Новости</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="inner-page"> 
+        <div class="inner-page__container container">
+          <h1 class="inner-page__title title title--green title--upper">Заявка на медиацию</h1>
+        </div>
+        <section class="inner-page__application application">
+          <div class="application__container container"> 
+            <form class="application__form" action="https://echo.htmlacademy.ru" method="post">
+              <div class="application__section">
+                <div class="application__title title--green title--upper title--size-xs title">Информация о медиации</div>
+                <div class="application__row">
+                  <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Вид медиации</span>
+                    <select class="field__input __js_select __js_mediation-type" name="mediation-type"> 
+                      <option value="1">Договорная медиация</option>
+                      <option value="2">Медиация бизнес-конфликта</option>
+                    </select>
+                  </label>
+                  <label class="field application__field application__field--size-two-thirds"><span class="field__hint">Сфера бизнеса</span>
+                    <select class="field__input __js_select" name="business-area"> 
+                      <option value="1">Медиация корпоративных конфликтов</option>
+                      <option value="2">Медиация в сфере строительства и недвижимости</option>
+                      <option value="3">Медиация в сфере ритейла и FMCG</option>
+                      <option value="4">Медиация в сфере HoReCa и туризма</option>
+                      <option value="5">Медиация в банковской сфере</option>
+                      <option value="6">Медиация в сфере страховования</option>
+                      <option value="7">Медиация в сфере интеллектуальной собственности</option>
+                      <option value="8">Медиация в сфере несостоятельности и банкротства</option>
+                      <option value="9">Медиация конфликта с государственным органом</option>
+                      <option value="10">Иное</option>
+                    </select>
+                  </label>
+                  <label class="field application__field"><span class="field__hint">Какие меры по урегулированию спора предпринимались ранее?</span>
+                    <select class="field__input __js_measures" name="settlement-measures" multiple> 
+                      <option value="1">Переговоры</option>
+                      <option value="2">Направлена претензия</option>
+                      <option value="3">Спор находится в суде</option>
+                      <option value="4" selected>Не предпринимались</option>
+                    </select>
+                  </label>
+                  <label class="field application__field"><span class="field__hint">Наличие у сторон соглашения о применении процедуры медиации/медиативной оговорки в договоре</span>
+                    <select class="field__input __js_select" name="settlement-measures"> 
+                      <option value="1">Да</option>
+                      <option value="2">Нет</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="application__section">
+                <div class="application__title title--green title--upper title--size-xs title">Информация о стороне-заявителе</div>
+                <div class="application__row">
+                  <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Сторона-заявитель</span>
+                    <select class="field__input __js_select __js_legal-status" name="applicant"> 
+                      <option value="1">Юридическое лицо</option>
+                      <option value="2">ИП</option>
+                      <option value="3">Физическое лицо</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="application__row">
+                  <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-заявителя</span>
+                    <input class="field__input" type="text" name="applicant-name">
+                  </label>
+                  <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-заявителя</span>
+                    <input class="field__input" type="text" name="representative-applicant-name">
+                  </label>
+                  <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-заявителя</span>
+                    <input class="field__input" type="number" name="applicant-tax-number">
+                  </label>
+                  <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-заявителя</span>
+                    <input class="field__input" type="tel" name="applicant-phone">
+                  </label>
+                  <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-заявителя</span>
+                    <input class="field__input" type="email" name="applicant-email">
+                  </label>
+                </div>
+              </div>
+              <div class="application__section">
+                <div class="application__title title--green title--upper title--size-xs title">Информация о стороне-контрагенте</div>
+                <div class="application__row">
+                  <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Количество сторон-контрагентов</span>
+                    <select class="field__input __js_select __js_sides-count" name="sides-number"> 
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="application__group">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 1</span>
+                      <select class="field__input __js_select __js_legal-status" name="counterparty"> 
+                        <option value="1">Юридическое лицо</option>
+                        <option value="2">ИП</option>
+                        <option value="3">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select" name="mediation-consent"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input" type="text" name="counterparty-name">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input" type="text" name="representative-counterparty-name">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input" type="number" name="counterparty-tax-number">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input" type="tel" name="counterparty-phone">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input" type="email" name="counterparty-email">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__sides-wrapper __js_counterparty">
+                  <div class="application__group">
+                    <div class="application__row">
+                      <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 2</span>
+                        <select class="field__input __js_select __js_legal-status" name="counterparty2"> 
+                          <option value="1">Юридическое лицо</option>
+                          <option value="2">ИП</option>
+                          <option value="3">Физическое лицо</option>
+                        </select>
+                      </label>
+                      <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                        <select class="field__input __js_select" name="mediation-consent2"> 
+                          <option value="1">Согласна</option>
+                          <option value="2">Не обсуждали эту возможность</option>
+                          <option value="3">Не согласна</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="application__row">
+                      <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                        <input class="field__input" type="text" name="counterparty-name2">
+                      </label>
+                      <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                        <input class="field__input" type="text" name="representative-counterparty-name2">
+                      </label>
+                      <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                        <input class="field__input" type="number" name="counterparty-tax-number2">
+                      </label>
+                      <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                        <input class="field__input" type="tel" name="counterparty-phone2">
+                      </label>
+                      <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                        <input class="field__input" type="email" name="counterparty-email2">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="application__bottom"> 
+                <div class="application__checkbox custom-checkbox"> 
+                  <input class="visually-hidden" id="applicationConsent" type="checkbox" name="consent">
+                  <label class="custom-checkbox__label" for="applicationConsent">Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a></label>
+                </div>
+                <button class="button application__send" type="submit"><span>Отправить заявку на медиацию</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container"> 
+        <div class="footer__main">
+          <div class="footer__column"> <a class="footer__link" href="#">info@mediation-rspp.ru</a><a class="footer__link" href="#">+7 (495) 000 00 00</a></div>
+          <div class="footer__column"> <a class="footer__link" href="#">правила пользования</a><a class="footer__link" href="#">договор оферты</a></div>
+          <div class="footer__column"> <a class="footer__link" href="#">политика конфиденциальности</a></div>
+          <div class="footer__copyright">Центр Медиации при РСПП ©2021     Все права защищены. Использование материалов с сайта возможно только с согласия правообладателей</div>
+        </div>
+        <div class="socials footer__socials">
+          <div class="socials__item"><a href="#" target="_blank">Instagram</a></div>
+          <div class="socials__item"><a href="#" target="_blank">Facebook</a></div>
+          <div class="socials__item"><a href="#" target="_blank">Youtube</a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

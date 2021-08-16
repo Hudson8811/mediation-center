@@ -1,0 +1,126 @@
+.application {
+  $self: &;
+  padding: 45px 0;
+
+  background-color: $grey;
+
+  &__container {
+  }
+
+  &__section {
+    & + & {
+      margin-top: 82px;
+
+      @include max(sm) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    @include max(sm) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+    margin-left: -30px;
+    margin-top: -16px;
+
+    @include max(md) {
+      margin-left: -15px;
+    }
+
+    @include max(sm) {
+      margin-left: 0;
+    }
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+
+  &__group {
+    margin-top: 50px;
+
+    @include max(sm) {
+      margin-top: 35px;
+    }
+
+    #{$self}__row {
+      margin-top: 0;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 16px;
+
+    @include max(md) {
+      margin-left: 15px;
+    }
+
+    @include max(sm) {
+      margin-left: 0;
+    }
+
+    &--size-two-thirds {
+      max-width: calc(66.66% - 30px);
+
+      @include max(md) {
+        max-width: none;
+      }
+    }
+
+    &--size-half {
+      max-width: calc(50% - 30px);
+
+      @include max(md) {
+        max-width: calc(50% - 15px);
+      }
+
+      @include max(sm) {
+        max-width: none;
+      }
+    }
+
+    &--size-third {
+      max-width: calc(33.33% - 30px);
+
+      @include max(md) {
+        max-width: calc(50% - 15px);
+      }
+
+      @include max(sm) {
+        max-width: none;
+      }
+    }
+
+    &--size-mdfull {
+      @include max(md) {
+        max-width: none;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 40px;
+  }
+
+  &__checkbox {
+  }
+
+  &__send {
+    //display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 18px 13px;
+    text-transform: lowercase;
+  }
+}

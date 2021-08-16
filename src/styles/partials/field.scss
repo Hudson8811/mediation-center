@@ -1,0 +1,129 @@
+.field {
+  $self: &;
+  display: block;
+
+  &--disabled {
+    //pointer-events: none;
+    cursor: not-allowed;
+
+    #{$self}__hint {
+      color: rgba($dark, 0.5);
+    }
+    #{$self}__input {
+      background-color: #fff !important;
+      cursor: not-allowed;
+    }
+  }
+
+  &__hint {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: (18 / 15);
+    font-weight: 600;
+    color: $dark; //$persianGreen;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 11px 33px 11px 20px;
+    font-size: 15px;
+    line-height: (18 / 15);
+    color: $dark;
+    font-weight: 600;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    appearance: none;
+    border-radius: none;
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background-color: $smoky;
+    }
+  }
+
+  .choices {
+    font-size: 15px;
+    line-height: (18 / 15);
+    color: $dark;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &[data-type="select-multiple"] {
+      .choices__inner {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px 33px 8px 20px !important;
+      }
+    }
+
+    &__inner {
+      min-height: 0;
+      padding: 12px 33px 12px 20px !important;
+      border-radius: 0;
+      border: none;
+      background-color: #ffffff;
+
+      transition: background-color 0.3s ease;
+
+      @include hover {
+        background-color: $smoky;
+      }
+    }
+
+    &__input {
+      margin: 0;
+      padding: 3px 0;
+      font-size: 15px;
+      line-height: (18 / 15);
+      background-color: transparent;
+    }
+
+    &__list,
+    &__list--single {
+      padding: 0;
+    }
+
+    &__list--dropdown {
+      .choices__item {
+        padding-left: 20px;
+      }
+    }
+
+    &__list--multiple {
+      .choices__item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .choices[data-type*="select-one"]::after,
+  .choices[data-type*="select-multiple"]::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    margin-top: -8.5px;
+    width: 16px;
+    height: 17px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url("../images/dropdown-arrow.svg");
+  }
+
+  .choices[data-type*="select-one"].is-open::after,
+  .choices[data-type*="select-multiple"].is-open::after {
+    transform: scale(1, -1);
+  }
+
+  .choices.is-disabled .choices__inner {
+    background-color: #ffffff;
+    cursor: not-allowed;
+  }
+  .choices.is-disabled .choices__input {
+    background-color: transparent;
+    cursor: not-allowed;
+  }
+}
