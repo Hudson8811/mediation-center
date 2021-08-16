@@ -14,22 +14,22 @@ window.addEventListener('load', () => {
 	filterInit($('.__js_mediators-filter-3'));
 
 	function filterInit(parent) {
-		parent.find('.filter-item').each(function() {
-			$(this).on('click', function () {
-				var filterValue = $(this).attr('data-filter');
+		parent.find('.person-list').isotope();
 
-				$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
-				parent.find('.person-list').isotope({
-					filter: filterValue,
-					layoutMode: 'fitRows'
-				});
+		parent.find('.filter-item').on('click', function () {
+			var filterValue = $(this).attr('data-filter');
 
-				if (window.matchMedia('(max-width: 1079px)').matches) {
-					var destination = parent.find('.person-list').offset().top;
+			$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+			parent.find('.person-list').isotope({
+				filter: filterValue,
+				layoutMode: 'fitRows'
+			}).isotope('reloadItems').isotope();
 
-					$('html').animate({ scrollTop: destination }, 300);
-				}
-			});
+			if (window.matchMedia('(max-width: 1079px)').matches) {
+				var destination = parent.find('.person-list').offset().top;
+
+				$('html').animate({ scrollTop: destination }, 300);
+			}
 		});
 	}
 });
