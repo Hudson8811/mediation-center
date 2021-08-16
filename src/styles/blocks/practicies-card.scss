@@ -1,0 +1,88 @@
+.practicies-card {
+  display: block;
+  width: 100%;
+  padding: 50px 65px 28px;
+  border: 2px solid $persianGreen;
+  transition: ease 0.3s;
+
+  @include max(md) {
+    padding: 40px 30px 28px;
+  }
+
+  @include hover {
+    background-color: $persianGreen;
+    transition: ease 0.3s;
+
+    .practicies-card {
+      &__separator {
+        background-color: $white;
+        transition: ease 0.3s;
+      }
+
+      &__title,
+      &__text {
+        color: $white;
+        transition: ease 0.3s;
+      }
+
+      &__arrow {
+        svg {
+          fill: $white;
+          transition: ease 0.3s;
+        }
+      }
+    }
+  }
+
+  &__title {
+    transition: ease 0.3s;
+
+    @include max(lg) {
+      font-size: 24px;
+    }
+
+    @include max(md) {
+      font-size: 18px;
+    }
+  }
+
+  &__separator {
+    margin: 29px 0 26px 3px;
+    width: calc(100% - 3px);
+    height: 10px;
+    background-color: $persianGreen;
+    transition: ease 0.3s;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    color: $dark;
+    transition: ease 0.3s;
+
+    @include max(md) {
+      font-size: 14px;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    display: inline-flex;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    min-width: 20px;
+    margin-left: 8px;
+    height: 15px;
+
+    svg {
+      position: absolute;
+      top: 2px;
+      width: 20px;
+      height: 100%;
+      fill: $persianGreen;
+      transition: ease 0.3s;
+    }
+  }
+}

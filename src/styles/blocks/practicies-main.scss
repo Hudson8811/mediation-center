@@ -1,0 +1,56 @@
+.practicies {
+  padding: 65px 0 122px;
+
+  @include max(md) {
+    padding-bottom: 45px;
+  }
+
+  &-wrapper {
+    display: flex;
+
+    @include max(620) {
+      flex-direction: column;
+    }
+
+    &__section {
+      max-width: 585px;
+      width: 100%;
+
+      @include max(620) {
+        max-width: none;
+      }
+
+      &--left {
+        padding-right: 15px;
+
+        @include max(620) {
+          padding: 0;
+        }
+      }
+
+      &--right {
+        padding-left: 15px;
+
+        @include max(620) {
+          padding: 0;
+        }
+      }
+    }
+
+    &__card {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 71px;
+
+    @include max(md) {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 69px;
+  }
+}

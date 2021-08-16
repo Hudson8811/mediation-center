@@ -1,0 +1,13 @@
+mixin practicies-card(title, text)
+  a(href="#").practicies-card
+    +title(title, 'h2', 'title--bold title--dark practicies-card__title')
+
+    .practicies-card__separator
+
+    .practicies-card__text
+      p= text
+        span.practicies-card__arrow
+          +icon('arrow')
+
+
+
