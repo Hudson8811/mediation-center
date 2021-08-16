@@ -14,13 +14,16 @@ block main
     .inner-page__container.container
       h1.inner-page__title.title.title--green.title--upper= page.title
  
-      .inner-page__main
-        +title('медиация и её преимущества', 'h2', 'about-mediation__title title--upper title--bold title--dark')
-        p.about-mediation__text Медиация (лат. «mediare» - посредничать) – это способ урегулирования споров при содействии профессионального нейтрального посредника (медиатора) на основе добровольного согласия сторон в целях достижения ими взаимоприемлемого решения.
+      .inner-page__main.text-block
+        +title('медиация и её преимущества', 'h1', 'about-mediation__title title--upper title--bold title--dark')
+        p Медиация (лат. «mediare» - посредничать) – это способ урегулирования споров при содействии профессионального нейтрального посредника (медиатора) на основе добровольного согласия сторон в целях достижения ими взаимоприемлемого решения.
         +arrow-link('Основные отличия медиации от судебного разбирательства', 'arrow-link--large-arrow arrow-link--tt-none about-card__arrow-link arrow-link--bold')
-        ul.about-mediation__list В основе медиации лежат 4 принципа:
-          each block in textBlockContent
-            li.about-mediation__list-item
-              .text-block.about-mediation__text-block
-                h3.text-block__title.text-block__title--green= block.title 
-                p.text-block__text= block.text
+        br
+        br
+        br
+        p В основе медиации лежат 4 принципа:
+        br
+        each block in textBlockContent
+          h2.text-block__title--green= block.title 
+          p= block.text
+          br

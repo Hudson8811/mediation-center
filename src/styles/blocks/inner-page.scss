@@ -59,4 +59,20 @@
     margin-top: 50px;
     line-height: (32 / 18);
   }
+
+  &__flex-container {
+    display: flex;
+  }
+
+  &__left {
+    width: 23.1%;
+    max-width: 270px;
+    margin-right: 30px;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    width: 77%;
+    max-width: calc(100% - 270px);
+  }
 }
