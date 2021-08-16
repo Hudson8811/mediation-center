@@ -1,0 +1,13 @@
+.social-block {
+	a, span{
+		color:#009A9D;
+	}
+	span{
+		display: inline-block;
+		margin-left:10px;
+		margin-right: 10px;
+	}
+	a:hover{
+		font-weight: bold;
+	}
+}

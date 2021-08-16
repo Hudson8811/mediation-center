@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+    title: 'Контакты',
+    order: 12,
+    isChild: true
+    };
+
+block main
+  .inner-page 
+    .inner-page__container.container
+      h1.inner-page__title.title.title--green.title--upper= page.title
+      .inner-page__main.text-block
+        p Котельническая наб., д. 17
+        br
+        p Е-mail:
+          a(href="mailto:info@mediation-rspp.ru") &nbsp;info@mediation-rspp.ru
+        br
+        p Тел.: <a href="tel:+74956630404">+7 (495) 663 0404</a>, доб. 1118 или 1120
+        p Факс: +7 (495) 663 0432
+        br
+        br
+        .social-block
+          a.socila-block-link(href="#") Facebook
+          span.social-block-line |
+          a.socila-block-link(href="#") Instagram
+          span.social-block-line |
+          a.socila-block-link(href="#") YouTube
