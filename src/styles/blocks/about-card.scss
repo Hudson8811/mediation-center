@@ -1,0 +1,74 @@
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px 68px 52px;
+  border: 3px solid $persianGreen;
+
+  @include max(lg) {
+    padding: 40px 50px;
+  }
+
+  @include max(sm) {
+    padding: 25px 30px;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: (32 / 18);
+    margin-top: 37px;
+
+    @include max(md) {
+      font-size: 14px;
+    }
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  &__arrow-link {
+    margin-top: 28px;
+
+    @include max(md) {
+      font-size: 16px;
+    }
+
+    svg {
+      @include max(md) {
+        width: 130px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__list {
+    font-size: 18px;
+    margin-top: 42px !important;
+    line-height: (32 / 18);
+    @include max(md) {
+      font-size: 14px;
+    }
+
+    &-item {
+      padding-left: 30px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 13px;
+        left: 12px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $dark;
+      }
+
+      &:first-child {
+        margin-top: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.about-center {
+  &__text-block {
+    margin-top: 32px;
+  }
+
+  &__hashtag {
+    color: $persianGreen;
+  }
+
+  &__button {
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    svg {
+      height: 19px;
+      width: 25px;
+    }
+  }
+}

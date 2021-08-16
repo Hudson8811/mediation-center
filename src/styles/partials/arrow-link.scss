@@ -14,6 +14,14 @@
   &--without-text {
   }
 
+  &--tt-none {
+    text-transform: none;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+
   &--large-arrow {
     #{$self}__icon {
       width: 90px;

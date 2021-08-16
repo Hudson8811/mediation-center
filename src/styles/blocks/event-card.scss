@@ -84,6 +84,12 @@
 		@include max(md) {
 			flex-direction: column;
 		}
+
+		.arrow-link + .arrow-link {
+			@include max(md) {
+				margin-top: 15px;
+			}
+		}
 	}
 
 	&--big-image {
