@@ -1,0 +1,50 @@
+.mediators {
+	padding: 60px 0 29px;
+	background-color: $aliceBlue;
+
+	&__item {
+		.person-card__name {
+			font-size: 32px;
+			line-height: 39px;
+			margin-top: 6px;
+
+			@include max(sm) {
+				font-size: 26px;
+				line-height: 29px;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&__more {
+		display: flex;
+		flex-direction: column;
+		width: calc(25% - 30px);
+		margin: 0 15px 30px;
+		padding: 34px 35px 30px;
+		border: 3px solid $dark;
+
+		@include max(md) {
+			width: calc(33.3333% - 30px);
+			padding: 20px 15px;
+		}
+
+		@include max(sm) {
+			width: calc(50% - 30px);
+		}
+
+		@include max(xs) {
+			width: 100%;
+			margin: 0 0 30px;
+		}
+	}
+
+	&__title {
+		color: $dark;
+		margin-bottom: 24px;
+	}
+
+	&__link {
+		margin-top: auto;
+	}
+}
