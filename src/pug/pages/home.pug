@@ -16,9 +16,11 @@ block main
 			img(src='images/first-bg.jpg', srcset='images/first-bg@2x.jpg 2x', alt='')
 		.first-screen__content
 			.first-screen__burger
-				span
-			.container
-				+button('подать заявку на медиацию', 'first-screen__btn')
+				span.first-screen__burger-lines
+				.first-screen__burger-text 
+					| подать заявку на медиацию
+			//- .container
+			//- 	+button('подать заявку на медиацию', 'first-screen__btn')
 
 	section.mission
 		.container
