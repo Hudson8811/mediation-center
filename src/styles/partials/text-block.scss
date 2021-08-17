@@ -1,5 +1,4 @@
 .text-block {
-
   font-size: 18px;
   line-height: (32 / 18);
 
@@ -30,6 +29,16 @@
       font-size: 14px;
     }
   }
-  a{
-    color: inherit;}
+  a {
+    color: inherit;
+  }
+
+  &--resume {
+    font-size: 15px;
+    line-height: 24px;
+
+    h1 {
+      margin-bottom: 26px;
+    }
+  }
 }

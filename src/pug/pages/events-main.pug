@@ -1,0 +1,21 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+    title: 'Мероприятия главная',
+    };
+
+
+
+block main
+  section.events-main
+    .container
+      .events-main-heading.events-main__heading
+        +title('Мероприятия', 'h1', 'events-main-heading__title title--upper') 
+
+      .event-list
+        +event-card('2', 'Название мероприятия', '16 августа 2021', 'events-main__item event-card--big-image event-list__item', '#')
+        +event-card('1', 'Длинное название программы обучения', '28 сентября 2021', 'events-main__item event-list__item', '#')
+        +event-card('', 'Очень длинное название программы обучения, вариант без картинки', '29-30 сентября 2021', 'events-main__item event-card--border-wide event-list__item', '#')
+        +event-card('', 'Очень длинное название программы обучения, вариант без картинки', '30 сентября - 02 октября 2021', 'events-main__item event-card--border-wide event-list__item', '#')   

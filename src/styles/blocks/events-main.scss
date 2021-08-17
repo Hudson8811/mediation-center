@@ -1,0 +1,15 @@
+.events-main {
+  padding: 65px 0 119px;
+
+  &__heading {
+    margin-bottom: 56px;
+  }
+
+  &__item {
+    height: 250px;
+
+    @include max(sm) {
+      height: auto;
+    }
+  }
+}
