@@ -36,7 +36,7 @@
   &__left {
     position: relative;
 
-    @include max(lg) {
+    @include max(md) {
       margin-right: 0;
       width: 32%;
     }
@@ -48,16 +48,20 @@
   }
 
   &__right {
+    @include max(md) {
+      max-width: none;
+      width: 65%;
+    }
+
     @include max(620) {
       margin-bottom: 31px;
       width: 100%;
-      max-width: none;
     }
   }
 
   &__button {
     svg {
-      @include max(lg) {
+      @include max(md) {
         align-self: center;
       }
     }
@@ -93,7 +97,7 @@
       transform: translate3d(0, -50%, 0);
     }
 
-    @include max(lg) {
+    @include max(md) {
       width: 30%;
     }
 
