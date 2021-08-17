@@ -56,6 +56,10 @@
     text-decoration: none;
     transition: color 0.3s ease;
 
+    &:visited {
+      color: inherit;
+    }
+
     @include hover {
       color: $persianGreen;
     }
