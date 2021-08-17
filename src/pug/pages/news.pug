@@ -23,9 +23,9 @@ block main
     .inner-page__container.container
       h1.inner-page__title.title.title--green.title--upper= page.title 
       .inner-page__main
-        ul.news-list.__js_news-masonry
+        .news-list.__js_news-masonry
           each item, index in NEWS 
-            li.news-list__item.news-card(class= !item.img ? ' news-card--bordered' : '', data-order= index)
+            .news-list__item.news-card(class= !item.img ? ' news-card--bordered' : '', data-order= index)
               if item.img
                 .news-card__image
                   img(src="images/" + item.img.n + ".jpg", srcset="images/" + item.img.n + "@2x.jpg 2x", width= item.img.w, height= item.img.h, alt="")
