@@ -1,5 +1,5 @@
 .about-center {
-  .text-block{
+  .text-block {
     padding-right: 10px;
   }
   &__text-block {
@@ -20,6 +20,91 @@
     svg {
       height: 19px;
       width: 25px;
+    }
+  }
+
+  &__container {
+    @include max(lg) {
+      justify-content: space-between;
+    }
+
+    @include max(620) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__left {
+    position: relative;
+
+    @include max(lg) {
+      margin-right: 0;
+      width: 32%;
+    }
+
+    @include max(620) {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  &__right {
+    @include max(620) {
+      margin-bottom: 31px;
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  &__button {
+    svg {
+      @include max(lg) {
+        align-self: center;
+      }
+    }
+
+    @include max(620) {
+      width: calc(50% - 15px);
+
+      &:first-child {
+        margin-right: 30px;
+      }
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+
+    @include max(440) {
+      width: 100%;
+
+      &:nth-child(2) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__buttons {
+    width: 23.1%;
+    max-width: 270px;
+
+    @include min(620) {
+      position: fixed;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    @include max(lg) {
+      width: 30%;
+    }
+
+    @include max(620) {
+      display: flex;
+      width: 100%;
+      max-width: none;
+    }
+
+    @include max(440) {
+      flex-direction: column;
     }
   }
 }
