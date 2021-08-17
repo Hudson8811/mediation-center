@@ -36,14 +36,6 @@
 
   &__title {
     transition: ease 0.3s;
-
-    @include max(lg) {
-      font-size: 24px;
-    }
-
-    @include max(md) {
-      font-size: 18px;
-    }
   }
 
   &__separator {

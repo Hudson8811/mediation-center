@@ -45,6 +45,10 @@
   &__heading {
     margin-bottom: 71px;
 
+    &--article {
+      margin-bottom: 64px;
+    }
+
     @include max(md) {
       margin-bottom: 56px;
     }
@@ -52,5 +56,15 @@
 
   &__text {
     margin-bottom: 69px;
+  }
+
+  &__article-title {
+    @include max(lg) {
+      font-size: 24px;
+    }
+
+    @include max(md) {
+      font-size: 18px;
+    }
   }
 }
