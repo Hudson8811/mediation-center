@@ -1,0 +1,39 @@
+.partner-card {
+  padding: 20px;
+  background-color: $aliceBlue;
+
+  &__image {
+    margin-bottom: 30px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: (22 / 18);
+    font-weight: 500;
+    color: $persianGreen;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: (24 / 15);
+  }
+
+  &__logo {
+    margin-top: 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

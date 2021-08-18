@@ -1,0 +1,111 @@
+.partners-section {
+  &__title {
+    margin-bottom: 42px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+
+    @include max(md) {
+      margin-left: -15px;
+      margin-top: -15px;
+    }
+
+    @include max(xs) {
+      margin-left: 0;
+    }
+  }
+
+  &__item {
+    $item: &;
+
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 30px);
+    min-height: 360px;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 20px 30px 26px;
+    border: solid 1px $persianGreen;
+    background-color: #ffffff;
+
+    @include max(md) {
+      width: calc(50% - 15px);
+      margin-left: 15px;
+      margin-top: 15px;
+    }
+
+    @include max(xs) {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &--half {
+      width: calc(50% - 30px);
+      padding-top: 40px;
+      padding-left: 70px;
+      padding-right: 70px;
+
+      @include max(md) {
+        width: 100%;
+        margin-left: 15px;
+        margin-top: 15px;
+
+        padding: 20px 30px 26px;
+      }
+
+      @include max(xs) {
+        margin-left: 0;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      padding-bottom: 18px;
+      border-bottom: solid 1px $persianGreen;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-title {
+      margin-top: 20px;
+      margin-bottom: auto;
+      font-size: 18px;
+      line-height: 1.333333333;
+      font-weight: 600;
+
+      a {
+        color: $persianGreen;
+        transition: color 0.3s ease;
+
+        @include hover {
+          color: lighten($persianGreen, 5%);
+        }
+      }
+    }
+    &-date {
+      margin-top: 24px;
+      font-size: 15px;
+      line-height: (21 / 15);
+      font-weight: 600;
+    }
+
+    &-number {
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: (24 / 15);
+
+      span {
+        display: block;
+        font-weight: 600;
+      }
+    }
+  }
+}

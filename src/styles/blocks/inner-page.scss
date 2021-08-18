@@ -79,4 +79,15 @@
     width: 77%;
     max-width: calc(100% - 270px);
   }
+
+  &__partners {
+    & + & {
+      margin-top: 95px;
+    }
+  }
+
+  &__partner-links {
+    margin-top: 40px;
+    margin-bottom: 85px;
+  }
 }
