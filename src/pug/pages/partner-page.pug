@@ -1,0 +1,41 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Партнеры',
+      order: 5,
+      isChild: true
+    };
+
+    const PARTNERS_CARDS = [
+      {img: 'photo-1', name: 'Оксана Трифонова', text: 'Заместитель Директора Центра развития потребительского рынка МШУ СКОЛКОВО, эксперт практики “Медиация в сфере ритейла и FMCG” Центра медиации при РСПП', logo: 'logo-1'},
+      {img: 'photo-2', name: 'Ирина Егорова', text: 'Советник по корпоративно-правовым вопросам председателя Комиссии по применению Кодекса добросовестных практик взаимоотношений торговых сетей и поставщиков потребительских товаров', logo: ''},
+      {img: 'photo-3', name: 'Наталья Ковтуненко', text: 'Руководитель Правового управления и комплаенс METRO Cash & Carry', logo: 'logo-2'},
+      {img: 'photo-4', name: 'Юлия Николаева', text: 'Эксперт практики “Медиация в сфере ритейла и FMCG” Центра медиации при РСПП', logo: ''},
+      {img: 'photo-5', name: 'Максим Арефьев', text: 'Директор по правовой поддержке, дирекция по правовым вопросам Х5 Ритейл групп', logo: 'logo-3'},
+      {img: 'photo-6', name: 'Татьяна Паняева', text: 'Директор по юридическим вопросам Coca-Cola HBC Россия', logo: 'logo-4'},
+      {img: 'photo-7', name: 'Александр Балахнин', text: 'Коммерческий директор Bonduelle', logo: 'logo-2'},
+      {img: 'photo-8', name: 'Вероника Герасименко', text: 'Директор по продажам в Федеральных сетях и Москве АГАМА', logo: ''}
+    ];
+
+
+block main
+  .inner-page 
+    .inner-page__container.container
+      h1.inner-page__title.title.title--green.title--upper= page.title 
+      .inner-page__main
+        section.partners-grid
+
+          +title('Отраслевой экспертный совет <br>по развитию медиации в сфере ритейла и FMCG', 'h2', 'title--dark title--upper partners-grid__title')
+
+          .partners-grid__list.__js_partners-masonry
+            each item in PARTNERS_CARDS
+              .partners-grid__item.partner-card
+                .partner-card__image 
+                  img(src="images/partners/" + item.img + ".jpg", srcset="images/partners/" + item.img + "@2x.jpg 2x", width="230", height="230", alt= item.name)
+                h3.partner-card__name= item.name 
+                .partner-card__text= item.text 
+                if item.logo 
+                  .partner-card__logo 
+                    img(src="images/partners/" + item.logo + ".jpg", srcset="images/partners/" + item.logo + "@2x.jpg 2x", width="230", height="180", alt="")

@@ -1,10 +1,17 @@
 window.addEventListener('load', () => {
 	const masonryNewsList = document.querySelector('.__js_news-masonry'),
 				filterActiveClass = 'active';
+	const partnersList = document.querySelector('.__js_partners-masonry');
 
 	if (masonryNewsList) {
 		const iso = new Isotope(masonryNewsList, {
 			itemSelector: '.news-list__item',
+			layoutMode: 'packery'
+		});
+	}
+	if (partnersList) {
+		const iso = new Isotope(partnersList, {
+			itemSelector: '.partners-grid__item',
 			layoutMode: 'packery'
 		});
 	}

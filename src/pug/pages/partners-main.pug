@@ -1,0 +1,95 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Партнеры',
+      order: 5,
+      isChild: false
+    };
+
+    const PARTNERS_1 = [
+      {img: {n: 'business', w: '210', h: '90'}, title: 'Центр развития потребительского рынка Московской школы управления СКОЛКОВО', date: {text: '01.03.2021', attr: '2021-03-01'}, num: '№1-СП/03-21'},
+      {img: {n: 'partner-placeholder', w: '210', h: '90'}, title: 'ООО «Сбер Лигал»', date: {text: '12.04.2021', attr: '2021-04-12'}, num: '№2-СП/04-21'},
+      {img: {n: 'partner-placeholder', w: '210', h: '90'}, title: 'ООО «Альянс Региональных Ритейлеров»', date: {text: '20.04.2021', attr: '2021-04-20'}, num: '№3-СП/04-21'},
+      {img: {n: 'partner-placeholder', w: '210', h: '90'}, title: 'Правовой Комитет Российского союза туриндустрии', date: {text: '24.05.2021', attr: '2021-05-24'}, num: '№4-СП/05-21'}
+    ];
+
+    const PARTNERS_2 = [
+      {img: {n: 'kiap', w: '428', h: '70'}, title: 'Адвокатское бюро КИАП', date: {text: '25.06.2021', attr: '2021-06-25'}, num: '№12-СП/06-21'},
+      {img: {n: 'kiap', w: '428', h: '70'}, title: 'Адвокатское бюро КИАП', date: {text: '25.06.2021', attr: '2021-06-25'}, num: '№12-СП/06-21'}
+    ];
+
+    const PARTNERS_3 = [
+      {img: {n: 'ralko', w: '428', h: '70'}, title: 'Нотариальная контора нотариуса города Москвы Ралько Василия Васильевича', date: {text: '21.06.2021', attr: '2021-06-21'}, num: '№11-СП/06-21'},
+      {img: {n: 'ralko', w: '428', h: '70'}, title: 'Нотариальная контора нотариуса города Москвы Ралько Василия Васильевича', date: {text: '21.06.2021', attr: '2021-06-21'}, num: '№11-СП/06-21'}
+    ];
+
+    const PARTNERS_4 = [
+      {img: {n: 'university', w: '210', h: '90'}, title: '«Национальный исследовательский университет “Высшая школа экономики» (НИУ ВШЭ)', date: {text: '25.05.2021', attr: '2021-05-2021'}, num: '№5-СП/05-21'},
+      {img: {n: 'partner-placeholder', w: '210', h: '90'}, title: 'Название ВУЗа', date: {text: '25.05.2021', attr: '2021-05-2021'}, num: '00000000000'},
+      {img: {n: 'partner-placeholder', w: '210', h: '90'}, title: 'Название ВУЗа', date: {text: '25.05.2021', attr: '2021-05-2021'}, num: '00000000000'},
+      {img: {n: 'partner-placeholder', w: '210', h: '90'}, title: 'Название ВУЗа', date: {text: '25.05.2021', attr: '2021-05-2021'}, num: '00000000000'}
+    ];
+
+block main
+  .inner-page 
+    .inner-page__container.container
+      h1.inner-page__title.title.title--green.title--upper= page.title 
+      .inner-page__main
+        .text-block
+          div(style="font-size: 36px; line-height: 44px; text-transform: uppercase; font-weight: 700;") Отраслевые экспертные советы
+          br
+          p Центр медиации при РСПП развивает медиацию для бизнеса и вместе с бизнесом. Именно для этой ценной коллаборации мы создаём при наших отраслевых практиках отраслевые экспертные советы (ОЭС), куда входят представители ключевых игроков соответствующей сферы бизнеса.
+
+          br
+
+          p Цель ОЭС - создание группы единомышленников, поддерживающих идею развития бизнес-медиации на определённом рынке, и готовых предпринимать активные действия в этом направлении.
+
+          br
+
+          p Вместе с такими бизнес-амбассадорами медиации в наших ОЭС мы:
+
+          ul
+            li Формулируем запрос о форматах медиативных процедур, которые востребованы и несут максимальную ценность бизнесу (через совместные брейнсторминги, интервью, исследования)
+
+            li Разрабатываем стратегии продвижения бизнес-медиации на соответствующем рынке (в том числе через проведение (1) внутренних образовательных мероприятий для сотрудников компаний представителей ОЭС и (2) внешних мероприятий)
+          
+            li Реализуем пилотные проекты по проведению адаптированных под выявленный запрос бизнеса медиативных процедур в компаниях представителей ОЭС и других заинтересованных компания
+          
+            li Способствуем включению медиативной оговорки о проведении процедуры медиации в Центре медиации при РСПП как обязательного этапа претензионного порядка урегулирования разногласий во все договоры компаний участников ОЭС.
+
+          br
+
+          p Самые активные члены наших ОЭС становятся ЭКСПЕРТАМИ ПРАКТИК, которые помогают нашим медиаторам максимально учитывать бизнес-контекст при разрешении бизнес-конфликтов. 
+        
+        .inner-page__partner-links.partner-links
+          .partner-links__list
+            a.partner-links__item(href="#", download) ОЭС по развитию медиации в&nbsp;сфере ритейла и FMCG
+              span.partner-links__item-arrow
+                +icon('arrow-right-short')(width="35", height="16")
+            a.partner-links__item(href="#", download) ОЭС по развитию медиации в&nbsp;сфере банковской и&nbsp;страховой деятельности
+              span.partner-links__item-arrow
+                +icon('arrow-right-short')(width="35", height="16")
+        
+        section.inner-page__partners.partners-section
+          +title('Бизнес-партнёры', 'h2', 'partners-section__title title--upper')
+          .partners-section__list
+            each item in PARTNERS_1 
+              +partner-item(item, '')
+
+        section.inner-page__partners.partners-section
+          +title('Юридический партнёр', 'h2', 'partners-section__title title--upper title--dark')
+          .partners-section__list
+            each item in PARTNERS_2
+              +partner-item(item, 'partners-section__item--half')
+        section.inner-page__partners.partners-section
+          +title('Партнёр-нотариус', 'h2', 'partners-section__title title--upper title--dark')
+          .partners-section__list
+            each item in PARTNERS_3
+              +partner-item(item, 'partners-section__item--half')
+        section.inner-page__partners.partners-section
+          +title('Вуз-партнёр', 'h2', 'partners-section__title title--upper title--dark')
+          .partners-section__list
+            each item in PARTNERS_4
+              +partner-item(item, '')

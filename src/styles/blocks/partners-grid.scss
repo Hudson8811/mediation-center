@@ -1,0 +1,44 @@
+.partners-grid {
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: -30px;
+    margin-left: -30px;
+
+    @include max(md) {
+      margin-left: -15px;
+      margin-top: -15px;
+    }
+
+    @include max(xs) {
+      margin-left: 0;
+    }
+  }
+
+  &__item {
+    width: calc(25% - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+    align-self: flex-start;
+
+    @include max(md) {
+      width: calc(33.33% - 15px);
+      margin-left: 15px;
+      margin-top: 15px;
+    }
+
+    @include max(sm) {
+      width: calc(50% - 15px);
+    }
+
+    @include max(xs) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
