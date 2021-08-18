@@ -135,6 +135,7 @@
   &__btn {
     width: 370px;
     margin-left: auto;
+    color: $white;
 
     @include max(1350) {
       margin: 0 auto;

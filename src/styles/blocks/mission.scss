@@ -55,6 +55,11 @@
 
 	&__more {
 		margin-top: auto;
+    color: $persianGreen;
+
+    &:visited {
+      color: $persianGreen;
+    }
 	}
 
 	&__title {
@@ -74,6 +79,10 @@
 		color: $persianGreen;
 		margin-top: auto;
 		transition: color 0.3s ease;
+
+    &:visited {
+      color: $persianGreen;
+    }
 
 		@include hover {
 			color: lighten($persianGreen, 5%);

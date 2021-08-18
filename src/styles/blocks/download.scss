@@ -36,6 +36,10 @@
   &__btn {
     width: 270px;
 
+    &:visited {
+      color: $white;
+    }
+
     @include max(md) {
       width: 180px;
     }
