@@ -1,85 +1,85 @@
 extends ../layouts/default
 
 block vars
-	-
-		const page = {
-		title: 'Главная',
-		order: 9,
-		isChild: true
-		};
+  -
+    const page = {
+    title: 'Главная',
+    order: 9,
+    isChild: true
+    };
 
 
 
 block main
-	section.first-screen
-		.first-screen__bg
-			img(src='images/first-bg.jpg', srcset='images/first-bg@2x.jpg 2x', alt='')
-		.first-screen__content
-			.first-screen__burger
-				span.first-screen__burger-lines
-				.first-screen__burger-text 
-					| подать заявку на медиацию
-			//- .container
-			//- 	+button('подать заявку на медиацию', 'first-screen__btn')
+  section.first-screen
+    .first-screen__bg
+      img(src='images/first-bg.jpg', srcset='images/first-bg@2x.jpg 2x', alt='')
+    .first-screen__content
+      .first-screen__burger
+        span.first-screen__burger-lines
+        .first-screen__burger-text 
+          | подать заявку на медиацию
+      .container
+        a(href="#").first-screen__btn.button подать заявку на медиацию
 
-	section.mission
-		.container
-			.mission__wrapper
-				.mission__left
-					+title('наша <br> миссия', 'h2', 'mission__title title--size-md')
-					+arrow-link('узнать больше <br> о центре <br> медиации', 'mission__more', 'news.html')
-				.mission__right
-					+title('мы в центре медиации рспп помогаем промышленникам и предпринимателям договариваться выгодно, сохраняя время, деньги и партнерские отношения', 'h2', 'mission__title mission__title--white title--size-md')
-					a.mission__tag(href='#', target='_blank') #договариватьсявыгодно
+  section.mission
+    .container
+      .mission__wrapper
+        .mission__left
+          +title('наша <br> миссия', 'h2', 'mission__title title--size-md')
+          +arrow-link('узнать больше <br> о центре <br> медиации', 'mission__more', 'news.html')
+        .mission__right
+          +title('мы в центре медиации рспп помогаем промышленникам и предпринимателям договариваться выгодно, сохраняя время, деньги и партнерские отношения', 'h2', 'mission__title mission__title--white title--size-md')
+          span.mission__tag #договариватьсявыгодно
 
-	section.download.download
-		.container.download__container
-			.download__text медиативно-арбитражная оговорка
-			a(href="#").button.button--border.download__btn скачать
-	section.news
-		.container
-			ul.news-list
-				li.news-list__item.news-card.news-card--bordered
-					time.news-card__date(datetime="2021-07-10") 10.07.2021
-					+title('заголовок последней Новости центра медиации при рспп', 'h3', 'news-card__title title--upper title--size-xs title--green', 'news.html')
-					.news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Fdminim veniam, quis nostrud exercitation
-					a.news-card__link(href="news.html") Читать новость >
-				li.news-list__item.news-card.news-card--bordered
-					.news-card__image
-						img(src="images/news-1.jpg", srcset="images/news-1@2x.jpg 2x", width="271", height="109", alt="")
-					time.news-card__date(datetime="2021-07-10") 10.07.2021
-					+title('заголовок Новости центра медиации при рспп', 'h3', 'news-card__title title--upper title--size-xs title--green', 'news.html')
-					.news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					a.news-card__link(href="news.html") Читать новость >
-				li.news-list__item.news-card.news-card--bordered
-					time.news-card__date(datetime="2021-07-10") 10.07.2021
-					+title('может быть довольно длинный заголовок Новости центра медиации при рспп', 'h3', 'news-card__title  title--upper title--size-xs title--green', 'news.html')
-					.news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Fdminim veniam, quis nostrud exercitation. Ut enim ad minim veniam, quis nostrud aliquip ex ea commodo consequat.
-					a.news-card__link(href="news.html") Читать новость >
+  section.download.download
+    .container.download__container
+      .download__text медиативно-арбитражная оговорка
+      a(href="#").button.button--border.download__btn скачать
+  section.news
+    .container
+      ul.news-list
+        li.news-list__item.news-card.news-card--bordered
+          time.news-card__date(datetime="2021-07-10") 10.07.2021
+          +title('заголовок последней Новости центра медиации при рспп', 'h3', 'news-card__title title--upper title--size-xs title--green', 'news.html')
+          .news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Fdminim veniam, quis nostrud exercitation
+          a.news-card__link(href="news.html") Читать новость >
+        li.news-list__item.news-card.news-card--bordered
+          .news-card__image
+            img(src="images/news-1.jpg", srcset="images/news-1@2x.jpg 2x", width="271", height="109", alt="")
+          time.news-card__date(datetime="2021-07-10") 10.07.2021
+          +title('заголовок Новости центра медиации при рспп', 'h3', 'news-card__title title--upper title--size-xs title--green', 'news.html')
+          .news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          a.news-card__link(href="news.html") Читать новость >
+        li.news-list__item.news-card.news-card--bordered
+          time.news-card__date(datetime="2021-07-10") 10.07.2021
+          +title('может быть довольно длинный заголовок Новости центра медиации при рспп', 'h3', 'news-card__title  title--upper title--size-xs title--green', 'news.html')
+          .news-card__text Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Fdminim veniam, quis nostrud exercitation. Ut enim ad minim veniam, quis nostrud aliquip ex ea commodo consequat.
+          a.news-card__link(href="news.html") Читать новость >
 
-				li.news-list__item.more-card.more-card--green
-					+title('Новости и&nbsp;события', 'h3', 'news__title more-card__title title--size-md')
-					+arrow-link('Читать <br>все новости', 'more-card__link', 'news.html')
+        li.news-list__item.more-card.more-card--green
+          +title('Новости и&nbsp;события', 'h3', 'news__title more-card__title title--size-md')
+          +arrow-link('Читать <br>все новости', 'more-card__link', 'news.html')
 
-	section.mediators
-		.container
-			.person-list
-				.mediators__more
-					+title('наши медиаторы', 'h2', 'mediators__title title--size-md')
-					+arrow-link('узнать больше <br> о медиаторах', 'mediators__link more-card__link', 'news.html')
-				+person-card('1', 'Анна <br> Cорокина', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators__item person-card--small person-list__item')
-				+person-card('2', 'Лидия <br> Макшейн', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', 'mediators__item person-card--small person-list__item')
-				+person-card('3', 'Пери <br> Измайлова', 'Медиатор', 'mediators__item person-card--small person-list__item')
+  section.mediators
+    .container
+      .person-list
+        .mediators__more
+          +title('наши медиаторы', 'h2', 'mediators__title title--size-md')
+          +arrow-link('узнать больше <br> о медиаторах', 'mediators__link more-card__link', 'news.html')
+        +person-card('1', 'Анна <br> Cорокина', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators__item person-card--small person-list__item')
+        +person-card('2', 'Лидия <br> Макшейн', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', 'mediators__item person-card--small person-list__item')
+        +person-card('3', 'Пери <br> Измайлова', 'Медиатор', 'mediators__item person-card--small person-list__item')
 
-	section.download.download
-		.container.download__container
-			.download__text алгоритм проведения медиации
-			a(href="#").button.button--border.download__btn скачать
+  section.download.download
+    .container.download__container
+      .download__text алгоритм проведения медиации
+      a(href="#").button.button--border.download__btn скачать
 
-	section.events
-		.container
-			.event-list
-				+event-card('', 'мероприятия <br> и образовательные программы', '', 'event-card--links event-list__item', '#', true)
-				+event-card('1', 'Длинное название программы обучения или мероприятия', '20 сентября 2021', 'event-list__item', '#')
-				+event-card('2', 'Название мероприятия', '20 сентября 2021', 'event-card--big-image event-list__item', '#')
-				+event-card('', 'Очень длинное название программы обучения, вариант без картинки', '07 сентября 2021   / старт обучения', 'event-card--border-wide event-list__item', '#')
+  section.events
+    .container
+      .event-list
+        +event-card('', 'мероприятия <br> и образовательные программы', '', 'event-card--links event-list__item', '#', true)
+        +event-card('1', 'Длинное название программы обучения или мероприятия', '20 сентября 2021', 'event-list__item', '#')
+        +event-card('2', 'Название мероприятия', '20 сентября 2021', 'event-card--big-image event-list__item', '#')
+        +event-card('', 'Очень длинное название программы обучения, вариант без картинки', '07 сентября 2021   / старт обучения', 'event-card--border-wide event-list__item', '#')
