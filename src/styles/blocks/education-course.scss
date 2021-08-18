@@ -1,0 +1,169 @@
+.education-course {
+  &__wrapper {
+    display: flex;
+    padding: 70px 0 44px;
+
+    @include max(680) {
+      flex-direction: column-reverse;
+    }
+
+    &-left {
+      flex-shrink: 0;
+      margin-right: 30px;
+      width: 100%;
+      max-width: 369px;
+
+      @include max(md) {
+        max-width: 269px;
+      }
+
+      @include max(680) {
+        max-width: none;
+      }
+    }
+
+    &-right {
+      width: 100%;
+
+      @include max(680) {
+        margin-bottom: 31px;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: 100px;
+    width: 100%;
+    max-width: 369px;
+    height: 380px;
+    object-fit: cover;
+
+    @include max(md) {
+      height: 280px;
+    }
+
+    @include max(680) {
+      display: none;
+    }
+  }
+
+  &__mediators {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &-item {
+      width: calc(50% - 15px);
+      margin-bottom: 22px;
+
+      .person-card__name {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 62px;
+
+    @include max(sm) {
+      font-size: 26px;
+    }
+  }
+
+  &__description {
+    ol {
+      margin: 0;
+
+      @include max(md) {
+        font-size: 14px;
+        padding-inline-start: 17px;
+      }
+    }
+  }
+
+  &-partners {
+    display: flex;
+    align-items: flex-start;
+
+    @include max(440) {
+      flex-direction: column;
+    }
+
+    &__image {
+      margin-right: 30px;
+      max-width: 170px;
+
+      @include max(440) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__text {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
+
+  &__partners {
+    margin-top: 21px;
+    margin-bottom: 50px;
+
+    &-title {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 21px;
+      }
+    }
+  }
+
+  &__price {
+    &-amount {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 42px;
+      color: $persianGreen;
+    }
+  }
+
+  &-apply {
+    padding: 36px 0 49px;
+    background-color: rgba(60, 76, 84, 0.08);
+
+    &__promo {
+      span {
+        color: $persianGreen;
+        text-transform: uppercase;
+      }
+    }
+
+    &__bottom {
+      @include min(sm) {
+        display: flex;
+
+        .application__checkbox {
+          max-width: calc(50% - 7.5px);
+
+          @include min(md) {
+            max-width: 480px;
+          }
+        }
+
+        .application__send {
+          margin-top: 0;
+          margin-left: auto;
+          max-width: calc(50% - 7.5px);
+
+          @include min(md) {
+            max-width: calc(33.33% - 20px);
+          }
+        }
+      }
+    }
+  }
+}

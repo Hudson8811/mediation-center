@@ -1,0 +1,82 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+    title: 'Обучение. Страница курса',
+    };
+
+    const FIELDS_1 = [
+      {hint: 'Имя Фамилия', type: 'text', name: 'applicant-name'},
+      {hint: 'Должность', type: 'text', name: 'applicant-position'},
+      {hint: 'E-mail', type: 'email', name: 'applicant-email'},
+      {hint: 'Компания', type: 'number', name: 'applicant-company'},
+      {hint: 'Телефон', type: 'tel', name: 'applicant-phone'},
+      {hint: 'Промокод', type: 'tel', name: 'applicant-promo', className: 'education-course-apply__promo'},
+    ];
+
+block main
+  section.education-course
+    .container
+      .education-course__wrapper
+        .education-course__wrapper-left
+          img(src="images/education/education-course__primary-photo.jpg", alt="Студенты идут в холле").education-course__image
+
+          .education-course__mediators
+            +person-card('1', 'Анна Cорокина', 'Руководитель Центра Медиации при РСПП, юрист, психолог, коуч, медиатор', 'education-course__mediators-item')
+            +person-card('2', 'Лидия Макшейн', 'Руководитель практики «Медиация в сфере ритейла и FMCG»,  медиатор, независимый директор', 'education-course__mediators-item')
+            +person-card('3', 'Пери Измайлова', 'Медиатор', 'education-course__mediators-item')
+
+        .education-course__wrapper-right
+          +title('ОБРАЗОВАТЕЛЬНЫЙ ПРОЕКТ «МЕДИАЦИЯ В ВЫСШЕМ ОБРАЗОВАНИИ»', 'h1', 'education-course__title title--upper')
+
+          .education-course__description.text-block
+            h2 <strong>Описание  мероприятия</strong>
+            p «Медиация в высшем образовании» - это образовательный проект Центра медиации при РСПП, который объединяет лучшие вузы России, чтобы через синергию лучших практик обучения встроить медиацию в образовательные программы каждого вуза страны.   
+            br
+
+            h2 <strong>Задачи проекта</strong>
+            ol
+              li Изучение best practices в обучении медиации как в России, так и за рубежом и создание единых минимальных стандартов обучения профессиональных медиаторов на базе высшей школы в России
+              li Внедрение медиации в программу высшего образования на уровне бакалавриата, магистратуры, специалитета, а также в программы дополнительного профессионального образования вузов России
+              li Создание межвузовской площадки для обсуждения вариантов сотрудничества и взаимопомощи в реализации просветительских проектов по развитию медиации
+              li Привлечение российских и зарубежных экспертов для создания новых образовательных продуктов в сфере бизнес-медиации  
+              li Реализация Международного конкурса по бизнес-медиации (International Business Mediation Moot (IBMM)
+          
+          .education-course__partners.text-block
+            h2.education-course__partners-title
+              | Партнеры проекта
+
+            .education-course__partners-item.education-course-partners
+              img(src="images/education/education-course__partners-logo.jpg", alt="«Национальный исследовательский университет «Высшая школа экономики» (НИУ ВШЭ)").education-course-partners__image
+
+              .education-course-partners__text
+                p Федеральное государственное автономное образовательное учреждение высшего образования «Национальный исследовательский университет «Высшая школа экономики» (НИУ ВШЭ)
+                br
+                p Соглашение о сотрудничестве №5-СП/05-21 от 25 мая 2021
+          
+          .education-course__price.text-block
+            h2 <strong>Стоимось обучения</strong>
+
+            span.education-course__price-amount
+              | 25 000 P
+
+    .education-course-apply
+      .container
+        form.application__form(action="https://echo.htmlacademy.ru", method="post")
+          .application__section
+            .application__row
+              each item in FIELDS_1
+                - const addClass = item.className || '';
+                label.field.application__field.application__field--size-third(class= addClass)
+                  span.field__hint= item.hint 
+                  input.field__input(type= item.type, name= item.name)
+
+          .application__bottom.education-course-apply__bottom
+            .application__checkbox.custom-checkbox 
+              input.visually-hidden#applicationConsent(type="checkbox", name="consent")
+              label.custom-checkbox__label(for="applicationConsent") Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a>
+            +button('Отправить заявку на обучение', 'application__send')(type="submit")
+
+
+
