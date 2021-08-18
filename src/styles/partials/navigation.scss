@@ -11,13 +11,13 @@
 
   &__item {
     display: block;
-    margin-right: 16px;
+    margin-right: 14px;
     line-height: 1;
 
     &--current {
       #{$self}__link {
         font-weight: 700;
-        color: $persianGreen;
+        color: $persianGreen !important;
         transition: opacity 0.3s ease;
 
         @include hover {
@@ -55,13 +55,15 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: color 0.3s ease;
+    margin: 0 1px;
 
     &:visited {
       color: inherit;
     }
 
     @include hover {
-      color: $persianGreen;
+      font-weight: 700;
+      margin: 0;
     }
   }
 }
