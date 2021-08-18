@@ -128,6 +128,10 @@
         // max-height: 370px;
         transition: all 0.3s ease;
         pointer-events: auto;
+
+        &:visited {
+          color: $white;
+        }
       }
     }
   }
@@ -136,6 +140,10 @@
     width: 370px;
     margin-left: auto;
     color: $white;
+
+    &:visited {
+      color: $white;
+    }
 
     @include max(1350) {
       margin: 0 auto;

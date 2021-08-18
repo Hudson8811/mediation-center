@@ -60,6 +60,11 @@
     &:visited {
       color: $persianGreen;
     }
+
+    @include hover {
+      color: lighten($persianGreen, 5%);
+    }
+
 	}
 
 	&__title {
