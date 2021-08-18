@@ -44,6 +44,10 @@
     text-decoration: none;
     transition: color 0.3s ease;
 
+    &:visited {
+      color: $persianGreen;
+    }
+
     @include hover {
       color: lighten($persianGreen, 5%);
     }
