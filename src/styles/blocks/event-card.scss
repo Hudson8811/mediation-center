@@ -141,9 +141,12 @@
 				color: $dark;
 				transition: opacity 0.3s ease;
 
-				@include hover {
-					opacity: 0.8;
-				}
+        &:not(h3) {
+          @include hover {
+            opacity: 0.8;
+          }
+        }
+
 			}
 
 			&__content {
