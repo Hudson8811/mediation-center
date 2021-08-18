@@ -53,6 +53,11 @@ a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
 
+/* Элементы a, которые были кликнуты, убираем цвет по умолчанию */
+a:visited {
+  color: inherit;
+}
+
 /* Упрощаем работу с изображениями */
 img {
 	max-width: 100%;
