@@ -1,21 +1,7 @@
 .about-mediation {
-  &__text {
-    font-weight: normal;
-    font-size: 18px;
-    line-height: (32 / 18);
-    margin-bottom: 17px;
-
-    @include max(md) {
-      font-size: 14px;
-    }
-
-    @include max(sm) {
-      margin-bottom: 0;
-    }
-  }
-
   &__title {
     margin-bottom: 28px;
+    font-size: 36px !important;
 
     @include max(md) {
       font-size: 28px;
@@ -24,26 +10,6 @@
     @include max(sm) {
       font-size: 20px;
       margin-bottom: 18px;
-    }
-  }
-
-  &__list {
-    margin-top: 56px !important;
-
-    @include max(md) {
-      margin-top: 35px !important;
-    }
-
-    @include max(sm) {
-      margin-top: 28px !important;
-    }
-
-    &-item {
-      margin-top: 33px;
-
-      @include max(sm) {
-        margin-top: 20px;
-      }
     }
   }
 

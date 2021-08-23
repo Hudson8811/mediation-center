@@ -13,11 +13,20 @@
     padding: 25px 30px;
   }
 
-  &__text {
+  h2 {
+    & + p {
+      margin-top: 8px;
+    }
+
+    & + ul {
+      margin-top: 8px;
+    }
+  }
+
+  p {
     font-weight: normal;
     font-size: 18px;
     line-height: (32 / 18);
-    margin-top: 37px;
 
     @include max(md) {
       font-size: 14px;
@@ -44,16 +53,19 @@
     }
   }
 
-  &__list {
+  ul {
     font-size: 18px;
-    margin-top: 42px !important;
     line-height: (32 / 18);
+    list-style: none;
+    padding: 0 !important;
+    margin: 8px 0 0 !important;
+
     @include max(md) {
       font-size: 14px;
     }
 
-    &-item {
-      padding-left: 30px;
+    li {
+      padding-left: 28px;
       position: relative;
 
       &::before {
@@ -65,10 +77,6 @@
         height: 6px;
         border-radius: 50%;
         background-color: $dark;
-      }
-
-      &:first-child {
-        margin-top: 4px;
       }
     }
   }

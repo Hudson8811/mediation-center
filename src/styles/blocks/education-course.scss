@@ -31,6 +31,15 @@
     }
   }
 
+  ol {
+    margin: 0;
+
+    @include max(md) {
+      font-size: 14px;
+      padding-inline-start: 17px;
+    }
+  }
+
   &__image {
     margin-bottom: 100px;
     width: 100%;

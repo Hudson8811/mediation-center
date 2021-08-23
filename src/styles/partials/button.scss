@@ -22,7 +22,12 @@
 
 	@include hover {
 		background-color: rgba($persianGreen, 0.85);
+    color: $white;
 	}
+
+  &:visited {
+    color: $white;
+  }
 
 	svg {
 		align-self: flex-end;
@@ -42,8 +47,13 @@
 		border-color: $persianGreen;
 		color: $persianGreen;
 
+    &:visited {
+      color: $persianGreen;
+    }
+
 		@include hover {
 			background-color: rgba($persianGreen, 0.05);
+      color: $persianGreen;
 		}
 
 		svg {

@@ -15,8 +15,11 @@ block main
       .inner-page__flex-container.about-center__container
         .inner-page__left.about-center__left
           .about-center__buttons
-            +button('смотреть документы', 'button--white about-center__button', 'arrow')
-            +button('наши практики', 'about-center__button')
+            a.button.button--white.about-center__button(href="#")
+              | смотреть документы
+              +icon('arrow') 
+            a.button.about-center__button(href="#")
+              | наши практики
         .inner-page__right.about-center__right.text-block
           h1.inner-page__title.title.title--green.title--upper= page.title
           p Центр медиации при РСПП (до 2021 года - Объединенная служба медиации (посредничества) при РСПП) создан в 2006 году.
