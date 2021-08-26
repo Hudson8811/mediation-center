@@ -1,37 +1,40 @@
 extends ../layouts/default
 
 block vars
-	-
-		const page = {
-		title: 'Медиаторы главная',
-		order: 9,
-		isChild: true
-		};
+  -
+    const page = {
+    title: 'Медиаторы главная',
+    order: 9,
+    isChild: true
+    };
 
 
 
 block main
-	section.mediators-main
-		.container
-
-			.mediators-main__block.__js_mediators-filter-2
-				.mediators-main__left
-					+title('Эксперты практик', 'h1', 'mediators-main__title title--upper')
-					.mediators-main__tabs
-						.filter-item.mediators-main__tabs-item.all.active(data-filter='*') ВСЕ ПРАКТИКИ
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_fmcg') FMCG
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_horeca') HoReCa
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_estate') Недвижимость
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_banks') Банки и страхование
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_administrative') Административная
-					.mediators-main__note При отраслевых практиках нашего Центра медиации при РСПП действуют отраслевые экспертные советы (ОЭС),
-						|  состоящие из представителей ключевых игроков соответствующей сферы бизнеса. Самые активные члены наших ОЭС становятся экспертами
-						|  практик, которые помогают нашим медиаторам максимально учитывать бизнес-контекст при разрешении бизнес-конфликтов.
-				.mediators-main__right
-					.person-list
-						+person-card('6', 'Имя <br> Фамилия', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_fmcg __js_estate __js_banks')
-						+person-card('7', 'Имя <br> Фамилия', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', 'mediators-main__person person-card--small person-list__item __js_horeca __js_estate')
-						+person-card('8', 'Имя <br> Фамилия', 'Медиатор', 'mediators-main__person person-card--small person-list__item __js_fmcg __js_banks')
-						+person-card('9', 'Имя <br> Фамилия', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_estate __js_administrative')
+  section.mediators-main
+    .container
+      .mediators-main__links
+        a.mediators-main__links-item.button--white.button(href="#") Медиаторы
+        a.mediators-main__links-item.button(href="#") Эксперты практик
+        a.mediators-main__links-item.button.button--white(href="#") Медиаторы партнеры
+      .mediators-main__block.__js_mediators-filter-2
+        .mediators-main__left
+          +title('Эксперты практик', 'h1', 'mediators-main__title title--upper')
+          .mediators-main__tabs
+            .filter-item.mediators-main__tabs-item.all.active(data-filter='*') ВСЕ ПРАКТИКИ
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_fmcg') FMCG
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_horeca') HoReCa
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_estate') Недвижимость
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_banks') Банки и страхование
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_administrative') Административная
+          .mediators-main__note При отраслевых практиках нашего Центра медиации при РСПП действуют отраслевые экспертные советы (ОЭС),
+            |  состоящие из представителей ключевых игроков соответствующей сферы бизнеса. Самые активные члены наших ОЭС становятся экспертами
+            |  практик, которые помогают нашим медиаторам максимально учитывать бизнес-контекст при разрешении бизнес-конфликтов.
+        .mediators-main__right
+          .person-list
+            +person-card('6', 'Имя <br> Фамилия', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_fmcg __js_estate __js_banks')
+            +person-card('7', 'Имя <br> Фамилия', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', 'mediators-main__person person-card--small person-list__item __js_horeca __js_estate')
+            +person-card('8', 'Имя <br> Фамилия', 'Медиатор', 'mediators-main__person person-card--small person-list__item __js_fmcg __js_banks')
+            +person-card('9', 'Имя <br> Фамилия', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_estate __js_administrative')
 
 

@@ -40,6 +40,15 @@
       color: $white;
     }
 
+    @include hover {
+      background-color: $white;
+      color: $persianGreen;
+      
+      span {
+        color: $persianGreen;
+      }
+    }
+
     @include max(md) {
       width: 180px;
     }

@@ -44,6 +44,15 @@
 		}
 	}
 
+  a:not(.button) {
+    color: $persianGreen;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: rgba($persianGreen, 0.85);
+    }
+  }
+
 	&--small {
 		#{$self} {
 			&__name {

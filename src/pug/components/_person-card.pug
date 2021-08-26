@@ -1,6 +1,8 @@
 mixin person-card(image, title, text, className)
-	.person-card(class= className)
-		.person-card__image
-			img(src='images/personal/' + image + '.jpg', srcset='images/personal/' + image + '@2x.jpg 2x', alt='')
-		.person-card__name!= title
-		.person-card__text!= text
+  .person-card(class= className)
+    .person-card__image
+      a(href="#") 
+        img(src='images/personal/' + image + '.jpg', srcset='images/personal/' + image + '@2x.jpg 2x', alt='')
+    .person-card__name
+      a(href="")!= title
+    .person-card__text!= text

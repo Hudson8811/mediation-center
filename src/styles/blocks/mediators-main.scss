@@ -12,10 +12,10 @@
 		}
 
 		+ .mediators-main__block {
-			margin-top: 87px;
+			padding-top: 87px;
 
 			@include max(md) {
-				margin-top: 45px;
+				padding-top: 45px;
 			}
 		}
 	}
@@ -46,6 +46,47 @@
 		}
 	}
 
+  &__links {
+    display: flex;
+    width: 100%;
+    margin-bottom: 90px;
+
+    @include max(md) {
+      margin-bottom: 60px;
+    }
+
+    @include max(sm) {
+      flex-direction: column;
+      max-width: 369px;
+      margin: 0 auto 60px;
+    }
+
+    &-item {
+      width: 100%;
+      text-transform: uppercase;
+
+      @include max(md) {
+        font-size: 16px;
+      }
+
+      &:not(:last-child) {
+        @include min(md) {
+          margin-right: 31px;
+        }
+
+        @include min(sm) {
+          margin-right: 25px;
+        }
+      }
+
+      &:not(:first-child) {
+        @include max(sm) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
 	&__title {
 		@include max(md) {
 			text-align: center;
@@ -54,6 +95,10 @@
 
 	&__tabs {
 		margin-top: 46px;
+
+    a {
+      color: $dark;
+    }
 
 		@include max(md) {
 			margin-top: 30px;

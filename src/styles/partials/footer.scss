@@ -28,6 +28,11 @@
     line-height: (15 / 12);
     color: #ffffff;
     font-weight: 500;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: $persianGreen;
+    }
 
     & + & {
       margin-top: 10px;

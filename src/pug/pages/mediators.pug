@@ -1,36 +1,40 @@
 extends ../layouts/default
 
 block vars
-	-
-		const page = {
-		title: 'Медиаторы главная',
-		order: 9,
-		isChild: true
-		};
+  -
+    const page = {
+    title: 'Медиаторы главная',
+    order: 9,
+    isChild: true
+    };
 
 
 
 block main
-	section.mediators-main
-		.container
-			.mediators-main__block.__js_mediators-filter-1
-				.mediators-main__left
-					+title('Медиаторы', 'h1', 'mediators-main__title title--upper')
-					.mediators-main__tabs
-						.filter-item.mediators-main__tabs-item.all.active(data-filter='*') ВСЕ ПРАКТИКИ
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_fmcg') FMCG
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_horeca') HoReCa
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_estate') Недвижимость
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_banks') Банки и страхование
-						.filter-item.mediators-main__tabs-item(data-filter='.__js_administrative') Административная
-					.mediators-main__note В список медиаторов Центра медиации при РСПП включены представители бизнес-сообщества, юристы и адвокаты.
-						|  Все наши медиаторы имеют базовое высшее юридическое или экономическое образование, а также прошли профессиональную
-						|  подготовку в качестве медиаторов.
-				.mediators-main__right
-					.person-list
-						+person-card('1', 'Анна <br> Cорокина', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_administrative')
-						+person-card('2', 'Лидия <br> Макшейн', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', 'mediators-main__person person-card--small person-list__item __js_horeca __js_banks')
-						+person-card('3', 'Пери <br> Измайлова', 'Медиатор', 'mediators-main__person person-card--small person-list__item __js_fmcg __js_estate')
-						+person-card('4', 'Имя <br> Фамилия', 'Руководитель Центра Медиации при РСПП, юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_administrative')
-						+person-card('5', 'Имя <br> Фамилия', 'Руководитель практики «Медиация в сфере ритейла и FMCG»,  медиатор, независимый директор', 'mediators-main__person person-card--small person-list__item __js_administrative __js_fmcg __js_banks')
+  section.mediators-main
+    .container
+      .mediators-main__links
+        a.mediators-main__links-item.button(href="#") Медиаторы
+        a.mediators-main__links-item.button.button--white(href="#") Эксперты практик
+        a.mediators-main__links-item.button.button--white(href="#") Медиаторы партнеры
+      .mediators-main__block.__js_mediators-filter-1
+        .mediators-main__left
+          +title('Медиаторы', 'h1', 'mediators-main__title title--upper')
+          .mediators-main__tabs
+            .filter-item.mediators-main__tabs-item.all.active(data-filter='*') ВСЕ ПРАКТИКИ
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_fmcg') FMCG
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_horeca') HoReCa
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_estate') Недвижимость
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_banks') Банки и страхование
+            .filter-item.mediators-main__tabs-item(data-filter='.__js_administrative') Административная
+          .mediators-main__note В список медиаторов Центра медиации при РСПП включены представители бизнес-сообщества, юристы и адвокаты.
+            |  Все наши медиаторы имеют базовое высшее юридическое или экономическое образование, а также прошли профессиональную
+            |  подготовку в качестве медиаторов.
+        .mediators-main__right
+          .person-list
+            +person-card('1', 'Анна <br> Cорокина', 'Руководитель <br> Центра Медиации при РСПП, <br> юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_administrative')
+            +person-card('2', 'Лидия <br> Макшейн', 'Руководитель практики <br> «Медиация в сфере ритейла <br> и FMCG», медиатор, независимый директор', 'mediators-main__person person-card--small person-list__item __js_horeca __js_banks')
+            +person-card('3', 'Пери <br> Измайлова', 'Медиатор', 'mediators-main__person person-card--small person-list__item __js_fmcg __js_estate')
+            +person-card('4', 'Имя <br> Фамилия', 'Руководитель Центра Медиации при РСПП, юрист, психолог, коуч, медиатор', 'mediators-main__person person-card--small person-list__item __js_administrative')
+            +person-card('5', 'Имя <br> Фамилия', 'Руководитель практики «Медиация в сфере ритейла и FMCG»,  медиатор, независимый директор', 'mediators-main__person person-card--small person-list__item __js_administrative __js_fmcg __js_banks')
 

@@ -5,6 +5,10 @@
 	height: 300px;
 	border: 3px solid $persianGreen;
 
+  &--small {
+    height: 250px;
+  }
+
 	@include max(sm) {
 		flex-direction: column;
 		//height: auto;

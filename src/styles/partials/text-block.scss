@@ -33,6 +33,12 @@
     color: inherit;
   }
 
+  ul {
+    margin: 0 0 0 8px;
+    padding: 0;
+    list-style: inside;
+  }
+
   &--resume {
     font-size: 15px;
     line-height: 24px;
