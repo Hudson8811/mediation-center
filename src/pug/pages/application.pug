@@ -29,7 +29,7 @@ block main
       h1.inner-page__title.title.title--green.title--upper= page.title 
     section.inner-page__application.application
       .application__container.container 
-        form.application__form(action="https://echo.htmlacademy.ru", method="post")
+        form.application__form#orderForm(action="https://echo.htmlacademy.ru", method="post")
           .application__section
             +title('Информация о медиации', 'div', 'application__title title--green title--upper title--size-xs')
             //-.application__title Информация о медиации

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/main.min.css" rel="stylesheet">
+    <title>Заявка конкурс</title>
+  </head>
+  <body>
+    <header class="header"> 
+      <div class="header__container container">
+        <div class="header__logo"> <a class="header__logo-rspp" href="https://www.rspp.ru/" target="_blank"> <img src="images/rspp-logo.svg" width="50" height="50" alt="Логотип РСПП"></a><a class="header__logo-mc" href="home.html"><img src="images/mc-logo.svg" width="149" height="52" alt="Логотип центра медиации"></a>
+        </div>
+        <button class="header__toggle" type="button"><span class="header__toggle-line"></span><span class="visually-hidden">Меню</span></button>
+        <div class="header__mobile-canvas"> 
+          <nav class="header__navigation navigation">
+            <ul class="navigation__list"> 
+              <li class="navigation__item"><a class="navigation__link" href="home.html">О центре</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="documents.html">Документы</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="mediators.html">Медиаторы</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="practices.html">Практики</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="partners-main.html">Партнёры</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="education-main.html">Обучение</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="events-main.html">Мероприятия</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="about-mediation.html">О медиации</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="news.html">Новости</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="inner-page"> 
+        <div class="inner-page__container container">
+          <h1 class="inner-page__title title title--green title--upper">МЕЖДУНАРОДНЫЙ КОНКУРС ПО БИЗНЕС-МЕДИАЦИИ INTERNATIONAL BUSINESS MEDIATION MOOT (IBMM)</h1>
+        </div>
+        <section class="inner-page__application application">
+          <div class="application__container container"> 
+            <form class="application__form" id="contestForm" action="https://echo.htmlacademy.ru" method="post">
+              <div class="application__section application__section--mt">
+                <div class="application__row">
+                  <label class="field application__field application__field--size-third __js_university-name"><span class="field__hint">Полное наименование вуза</span>
+                    <input class="field__input" type="text" name="university-name">
+                  </label>
+                  <label class="field application__field application__field--size-third __js_university-address"><span class="field__hint">Страна / город</span>
+                    <input class="field__input" type="text" name="university-address">
+                  </label>
+                  <label class="field application__field application__field--text-green application__field--size-third"><span class="field__hint">Количество студентов в команде</span>
+                    <select class="field__input __js_select __js_students-count" name="students-count">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="application__section application__section--mt">
+                <div class="application__title title--green title--upper title--size-xs title">Информация о членах команды</div>
+                <div class="application__group application__group--mt">
+                  <div class="application__row application__row--grid">
+                    <div class="application__row-left">
+                      <div class="application__title--inside-row title--green title--size-xxs title">Заполните данные студента 1</div>
+                    </div>
+                    <div class="application__row-right">
+                      <label class="field application__field application__field--size-half __js_student-name"><span class="field__hint">ФИО</span>
+                        <input class="field__input" type="text" name="student-name">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_student-speciality"><span class="field__hint">Специализация</span>
+                        <input class="field__input" type="text" name="student-speciality">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_course"><span class="field__hint">Курс</span>
+                        <input class="field__input" type="text" name="course">
+                      </label>
+                      <label class="field application__field application__field--text-green application__field--size-half"><span class="field__hint">Опыт участия в Moot Courts</span>
+                        <select class="field__input __js_select __js_student-experience" name="student-experience1"> 
+                          <option value="Нет">Нет</option>
+                          <option value="Да">Да</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="application__students-wrapper __js_counterparty"></div>
+              </div>
+              <div class="application__section application__section--mt">
+                <div class="application__title title--green title--upper title--size-xs title">Информация о преподавателе</div>
+                <div class="application__row application__row--grid">
+                  <div class="application__row-left">
+                    <label class="field application__field application__field--text-green application__field--size-mdfull"><span class="field__hint">Есть ли у вашей команды преподаватель? </span>
+                      <select class="field__input __js_select __js_teacher-status" name="teacher-status"> 
+                        <option value="Есть">Да</option>
+                        <option value="Нет">Нет</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row-right">
+                    <label class="field application__field application__field--size-half __js_teacher-name"><span class="field__hint">ФИО</span>
+                      <input class="field__input" type="text" name="teacher-name">
+                    </label>
+                    <label class="field application__field application__field--size-half __js_teacher-phone"><span class="field__hint">Телефон</span>
+                      <input class="field__input" type="text" name="teacher-phone">
+                    </label>
+                    <label class="field application__field application__field--size-half __js_teacher-rank"><span class="field__hint">Должность</span>
+                      <input class="field__input" type="text" name="teacher-rank">
+                    </label>
+                    <label class="field application__field application__field--size-half __js_teacher-email"><span class="field__hint">email</span>
+                      <input class="field__input" type="text" name="teacher-email">
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="application__section application__section--mt">
+                <div class="application__title title--green title--upper title--size-xs title">Контактная информация команды</div>
+                <div class="application__row">
+                  <label class="field application__field application__field--size-third __js_contact-name"><span class="field__hint">ФИО контактного лица</span>
+                    <input class="field__input" type="text" name="contact-name">
+                  </label>
+                  <label class="field application__field application__field--size-third __js_contact-phone"><span class="field__hint">Телефон</span>
+                    <input class="field__input" type="text" name="contact-phone">
+                  </label>
+                  <label class="field application__field application__field--size-third __js_contact-email"><span class="field__hint">email</span>
+                    <input class="field__input" type="text" name="contact-email">
+                  </label>
+                </div>
+              </div>
+              <div class="application__bottom application__bottom--mt">
+                <button class="button application__send" type="submit"><span>отправить заявку на участие</span>
+                </button>
+              </div>
+              <div class="application__bottom">
+                <div class="application__checkbox custom-checkbox application__checkbox--mt">
+                  <input class="visually-hidden" id="applicationMailing" type="checkbox" name="mailing">
+                  <label class="custom-checkbox__label" for="applicationMailing">Настоящим подтверждаем своё желание получать рассылку и информацию об IBMM</label>
+                </div>
+                <div class="application__checkbox custom-checkbox application__checkbox--mt">
+                  <input class="visually-hidden" id="applicationPersonal" type="checkbox" name="personalData">
+                  <label class="custom-checkbox__label" for="applicationPersonal">Настоящим подтверждаем своё согласие на использование своих персональных данных, предоставленных в заявке на участие в IBMM</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container"> 
+        <div class="footer__main">
+          <div class="footer__column"> <a class="footer__link" href="#">info@mediation-rspp.ru</a><a class="footer__link" href="#">+7 (495) 000 00 00</a></div>
+          <div class="footer__column"> <a class="footer__link" href="#">правила пользования</a><a class="footer__link" href="#">договор оферты</a></div>
+          <div class="footer__column"> <a class="footer__link" href="#">политика конфиденциальности</a></div>
+          <div class="footer__copyright">Центр Медиации при РСПП ©2021     Все права защищены. Использование материалов с сайта возможно только с согласия правообладателей</div>
+        </div>
+        <div class="socials footer__socials">
+          <div class="socials__item"><a href="#" target="_blank">Instagram</a></div>
+          <div class="socials__item"><a href="#" target="_blank">Facebook</a></div>
+          <div class="socials__item"><a href="#" target="_blank">Youtube</a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

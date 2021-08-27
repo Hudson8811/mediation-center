@@ -15,10 +15,34 @@
         margin-top: 50px;
       }
     }
+
+    &--mt {
+      & + & {
+        margin-top: 52px;
+  
+        @include max(sm) {
+          margin-top: 30px;
+        }
+      }
+    }
   }
 
   &__title {
     margin-bottom: 24px;
+
+    &--inside-row {
+      margin-top: 36px;
+      margin-left: 30px;
+
+      @include  max(md) {
+        margin-left: 15px;
+        margin-top: 20px;
+      }
+
+      @include max(sm) {
+        margin-left: 0;
+      }
+    }
 
     @include max(sm) {
       margin-bottom: 12px;
@@ -31,6 +55,37 @@
     min-width: 100%;
     margin-left: -30px;
     margin-top: -16px;
+
+    &--grid {
+      @include max(md) {
+        flex-direction: column;
+      }
+    }
+
+    &-left {
+      width: 100%;
+      max-width: calc(33.33%);
+      display: flex;
+
+      @include max(md) {
+        max-width: 50%;
+      }
+
+      @include max(sm) {
+        max-width: 100%;
+      }
+    }
+
+    &-right {
+      width: 100%;
+      max-width: calc(66.66%);
+      display: flex;
+      flex-wrap: wrap;
+
+      @include max(md) {
+        max-width: 100%;
+      }
+    }
 
     @include max(md) {
       margin-left: -15px;
@@ -54,6 +109,10 @@
 
     #{$self}__row {
       margin-top: 0;
+    }
+
+    &--mt {
+      margin-top: -16px;
     }
   }
 
@@ -107,13 +166,28 @@
         max-width: none;
       }
     }
+
+    &--text-green {
+      .choices {
+        color: $persianGreen;
+      }
+    }
   }
 
   &__bottom {
     margin-top: 40px;
+
+    &--mt {
+      margin-top: 70px;
+    }
   }
 
   &__checkbox {
+    &--mt {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
   }
 
   &__send {

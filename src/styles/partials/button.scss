@@ -42,6 +42,23 @@
 		border-color: $white;
 	}
 
+  &--arrow-down {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 370px;
+    padding-left: 27px;
+    padding-right: 17px;
+
+    svg {
+      transform: rotate(90deg);
+      margin: 0;
+      padding: 0;
+      height: 19px;
+      padding-right: 5px;
+    }
+  }
+
 	&--white {
 		background-color: $white;
 		border-color: $persianGreen;

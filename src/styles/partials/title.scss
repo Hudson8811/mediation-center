@@ -4,6 +4,11 @@
   font-weight: 600;
   color: $persianGreen;
 
+  @include max(sm) {
+    font-size: 28px;
+    line-height: (43.57 / 28);
+  }
+
   a {
     color: $dark;
     text-decoration: none;
@@ -62,5 +67,11 @@
     font-size: 18px;
     line-height: (32 / 18);
     font-weight: 700;
+  }
+
+  &--size-xxs {
+    font-size: 15px;
+    line-height: (32 / 18);
+    font-weight: 600;
   }
 }

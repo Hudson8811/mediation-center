@@ -1,0 +1,105 @@
+extends ../layouts/default
+
+block vars
+  -
+    const page = {
+      title: 'Заявка конкурс',
+      order: 0
+    };
+
+    const FIELDS_1 = [
+      {hint: 'Полное наименование вуза', type: 'text', name: 'university-name', js: '__js_university-name'},
+      {hint: 'Страна / город', type: 'text', name: 'university-address', js: '__js_university-address'},
+    ];
+    
+    const FIELDS_2 = [
+      {hint: 'ФИО', type: 'text', name: 'student-name', js: '__js_student-name'},
+      {hint: 'Специализация', type: 'text', name: 'student-speciality', js: '__js_student-speciality'},
+      {hint: 'Курс', type: 'text', name: 'course', js: '__js_course'},
+    ];
+    
+    const FIELDS_3 = [
+      {hint: 'ФИО', type: 'text', name: 'teacher-name', js: '__js_teacher-name'},
+      {hint: 'Телефон', type: 'text', name: 'teacher-phone', js: '__js_teacher-phone'},
+      {hint: 'Должность', type: 'text', name: 'teacher-rank', js: '__js_teacher-rank'},
+      {hint: 'email', type: 'text', name: 'teacher-email', js: '__js_teacher-email'},
+    ];
+
+    const FIELDS_4 = [
+      {hint: 'ФИО контактного лица', type: 'text', name: 'contact-name', js: '__js_contact-name'},
+      {hint: 'Телефон', type: 'text', name: 'contact-phone', js: '__js_contact-phone'},
+      {hint: 'email', type: 'text', name: 'contact-email', js: '__js_contact-email'},
+    ];
+
+block main
+  .inner-page 
+    .inner-page__container.container
+      h1.inner-page__title.title.title--green.title--upper МЕЖДУНАРОДНЫЙ КОНКУРС ПО БИЗНЕС-МЕДИАЦИИ INTERNATIONAL BUSINESS MEDIATION MOOT (IBMM)
+    section.inner-page__application.application
+      .application__container.container 
+        form.application__form#contestForm(action="https://echo.htmlacademy.ru", method="post")
+          .application__section.application__section--mt
+            .application__row
+              each item in FIELDS_1
+                - const js1 = item.js || '';
+                label.field.application__field.application__field--size-third(class= js1)
+                  span.field__hint= item.hint 
+                  input.field__input(type= item.type, name= item.name)
+              label.field.application__field.application__field--text-green.application__field--size-third
+                span.field__hint Количество студентов в команде
+                select.field__input.__js_select.__js_students-count(name="students-count")
+                  each item, index in ['1', '2', '3', '4',]
+                    option(value= index + 1)= item
+          .application__section.application__section--mt
+            +title('Информация о членах команды', 'div', 'application__title title--green title--upper title--size-xs')
+            .application__group.application__group--mt
+              .application__row.application__row--grid
+                .application__row-left
+                  +title('Заполните данные студента 1', 'div', 'application__title--inside-row title--green title--size-xxs')
+                .application__row-right
+                  each item in FIELDS_2
+                    - const js2 = item.js || '';
+                    label.field.application__field.application__field--size-half(class= js2)
+                      span.field__hint= item.hint 
+                      input.field__input(type= item.type, name= item.name)
+                  label.field.application__field.application__field--text-green.application__field--size-half
+                    span.field__hint Опыт участия в Moot Courts
+                    select.field__input.__js_select.__js_student-experience(name="student-experience1") 
+                        option(value="Нет") Нет
+                        option(value="Да") Да
+            .application__students-wrapper.__js_counterparty
+
+          .application__section.application__section--mt
+            +title('Информация о преподавателе', 'div', 'application__title title--green title--upper title--size-xs')
+            .application__row.application__row--grid
+              .application__row-left
+                label.field.application__field.application__field--text-green.application__field--size-mdfull
+                  span.field__hint Есть ли у вашей команды преподаватель? 
+                  select.field__input.__js_select.__js_teacher-status(name="teacher-status") 
+                        option(value="Есть") Да
+                        option(value="Нет") Нет
+              .application__row-right
+                each item in FIELDS_3
+                  - const js2 = item.js || '';
+                  label.field.application__field.application__field--size-half(class= js2)
+                    span.field__hint= item.hint 
+                    input.field__input(type= item.type, name= item.name)
+          
+          .application__section.application__section--mt
+            +title('Контактная информация команды', 'div', 'application__title title--green title--upper title--size-xs')
+            .application__row
+              each item in FIELDS_4
+                - const js2 = item.js || '';
+                label.field.application__field.application__field--size-third(class= js2)
+                  span.field__hint= item.hint 
+                  input.field__input(type= item.type, name= item.name)
+          .application__bottom.application__bottom--mt
+            +button('отправить заявку на участие', 'application__send')(type="submit")
+
+          .application__bottom
+            .application__checkbox.custom-checkbox.application__checkbox--mt
+              input.visually-hidden#applicationMailing(type="checkbox", name="mailing")
+              label.custom-checkbox__label(for="applicationMailing") Настоящим подтверждаем своё желание получать рассылку и информацию об IBMM
+            .application__checkbox.custom-checkbox.application__checkbox--mt
+              input.visually-hidden#applicationPersonal(type="checkbox", name="personalData")
+              label.custom-checkbox__label(for="applicationPersonal") Настоящим подтверждаем своё согласие на использование своих персональных данных, предоставленных в заявке на участие в IBMM
