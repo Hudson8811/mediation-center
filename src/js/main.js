@@ -10,3 +10,5 @@
 //= ./partials/header.js
 //= ./partials/masonry.js
 //= ./partials/application.js
+//= ./partials/validation.js
+//= ./partials/maskPhone.js

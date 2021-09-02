@@ -50,6 +50,7 @@
     color: $dark;
     font-weight: 600;
     text-transform: uppercase;
+    margin-bottom: 0;
 
     &[data-type="select-multiple"] {
       .choices__inner {
@@ -94,7 +95,7 @@
 
     &__list--multiple {
       .choices__item {
-        margin-bottom: 0;
+        //margin-bottom: 0;
       }
     }
   }

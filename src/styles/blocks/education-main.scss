@@ -2,14 +2,9 @@
 	padding: 66px 0 88px;
 
 	&__title {
-		margin-bottom: 61px;
+		margin-bottom: 56px;
 	}
 
 	&__item {
-		height: 250px;
-
-		@include max(sm) {
-			height: auto;
-		}
 	}
 }

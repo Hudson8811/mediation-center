@@ -43,10 +43,10 @@
               <div class="application__section application__section--mt">
                 <div class="application__row">
                   <label class="field application__field application__field--size-third __js_university-name"><span class="field__hint">Полное наименование вуза</span>
-                    <input class="field__input" type="text" name="university-name">
+                    <input class="field__input required" type="text" name="university-name">
                   </label>
                   <label class="field application__field application__field--size-third __js_university-address"><span class="field__hint">Страна / город</span>
-                    <input class="field__input" type="text" name="university-address">
+                    <input class="field__input required" type="text" name="university-address">
                   </label>
                   <label class="field application__field application__field--text-green application__field--size-third"><span class="field__hint">Количество студентов в команде</span>
                     <select class="field__input __js_select __js_students-count" name="students-count">
@@ -60,23 +60,23 @@
               </div>
               <div class="application__section application__section--mt">
                 <div class="application__title title--green title--upper title--size-xs title">Информация о членах команды</div>
-                <div class="application__group application__group--mt">
+                <div class="application__group application__group--mt application__students-group">
                   <div class="application__row application__row--grid">
                     <div class="application__row-left">
                       <div class="application__title--inside-row title--green title--size-xxs title">Заполните данные студента 1</div>
                     </div>
                     <div class="application__row-right">
                       <label class="field application__field application__field--size-half __js_student-name"><span class="field__hint">ФИО</span>
-                        <input class="field__input" type="text" name="student-name">
+                        <input class="field__input required" type="text" name="student-name-1">
                       </label>
                       <label class="field application__field application__field--size-half __js_student-speciality"><span class="field__hint">Специализация</span>
-                        <input class="field__input" type="text" name="student-speciality">
+                        <input class="field__input required" type="text" name="student-speciality-1">
                       </label>
                       <label class="field application__field application__field--size-half __js_course"><span class="field__hint">Курс</span>
-                        <input class="field__input" type="text" name="course">
+                        <input class="field__input required" type="text" name="course-1">
                       </label>
                       <label class="field application__field application__field--text-green application__field--size-half"><span class="field__hint">Опыт участия в Moot Courts</span>
-                        <select class="field__input __js_select __js_student-experience" name="student-experience1"> 
+                        <select class="field__input __js_select __js_student-experience required" name="student-experience-1"> 
                           <option value="Нет">Нет</option>
                           <option value="Да">Да</option>
                         </select>
@@ -84,7 +84,78 @@
                     </div>
                   </div>
                 </div>
-                <div class="application__students-wrapper __js_counterparty"></div>
+                <div class="application__group application__group--mt application__students-group hidden">
+                  <div class="application__row application__row--grid">
+                    <div class="application__row-left">
+                      <div class="application__title--inside-row title--green title--size-xxs title">Заполните данные студента 2</div>
+                    </div>
+                    <div class="application__row-right">
+                      <label class="field application__field application__field--size-half __js_student-name"><span class="field__hint">ФИО</span>
+                        <input class="field__input required" type="text" name="student-name-2">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_student-speciality"><span class="field__hint">Специализация</span>
+                        <input class="field__input required" type="text" name="student-speciality-2">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_course"><span class="field__hint">Курс</span>
+                        <input class="field__input required" type="text" name="course-2">
+                      </label>
+                      <label class="field application__field application__field--text-green application__field--size-half"><span class="field__hint">Опыт участия в Moot Courts</span>
+                        <select class="field__input __js_select __js_student-experience required" name="student-experience-2"> 
+                          <option value="Нет">Нет</option>
+                          <option value="Да">Да</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="application__group application__group--mt application__students-group hidden">
+                  <div class="application__row application__row--grid">
+                    <div class="application__row-left">
+                      <div class="application__title--inside-row title--green title--size-xxs title">Заполните данные студента 3</div>
+                    </div>
+                    <div class="application__row-right">
+                      <label class="field application__field application__field--size-half __js_student-name"><span class="field__hint">ФИО</span>
+                        <input class="field__input required" type="text" name="student-name-3">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_student-speciality"><span class="field__hint">Специализация</span>
+                        <input class="field__input required" type="text" name="student-speciality-3">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_course"><span class="field__hint">Курс</span>
+                        <input class="field__input required" type="text" name="course-3">
+                      </label>
+                      <label class="field application__field application__field--text-green application__field--size-half"><span class="field__hint">Опыт участия в Moot Courts</span>
+                        <select class="field__input __js_select __js_student-experience required" name="student-experience-3"> 
+                          <option value="Нет">Нет</option>
+                          <option value="Да">Да</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="application__group application__group--mt application__students-group hidden">
+                  <div class="application__row application__row--grid">
+                    <div class="application__row-left">
+                      <div class="application__title--inside-row title--green title--size-xxs title">Заполните данные студента 4</div>
+                    </div>
+                    <div class="application__row-right">
+                      <label class="field application__field application__field--size-half __js_student-name"><span class="field__hint">ФИО</span>
+                        <input class="field__input required" type="text" name="student-name-4">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_student-speciality"><span class="field__hint">Специализация</span>
+                        <input class="field__input required" type="text" name="student-speciality-4">
+                      </label>
+                      <label class="field application__field application__field--size-half __js_course"><span class="field__hint">Курс</span>
+                        <input class="field__input required" type="text" name="course-4">
+                      </label>
+                      <label class="field application__field application__field--text-green application__field--size-half"><span class="field__hint">Опыт участия в Moot Courts</span>
+                        <select class="field__input __js_select __js_student-experience required" name="student-experience-4"> 
+                          <option value="Нет">Нет</option>
+                          <option value="Да">Да</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="application__section application__section--mt">
                 <div class="application__title title--green title--upper title--size-xs title">Информация о преподавателе</div>
@@ -99,16 +170,16 @@
                   </div>
                   <div class="application__row-right">
                     <label class="field application__field application__field--size-half __js_teacher-name"><span class="field__hint">ФИО</span>
-                      <input class="field__input" type="text" name="teacher-name">
+                      <input class="field__input required" type="text" name="teacher-name">
                     </label>
                     <label class="field application__field application__field--size-half __js_teacher-phone"><span class="field__hint">Телефон</span>
-                      <input class="field__input" type="text" name="teacher-phone">
+                      <input class="field__input required" type="tel" name="teacher-phone">
                     </label>
                     <label class="field application__field application__field--size-half __js_teacher-rank"><span class="field__hint">Должность</span>
-                      <input class="field__input" type="text" name="teacher-rank">
+                      <input class="field__input required" type="text" name="teacher-rank">
                     </label>
                     <label class="field application__field application__field--size-half __js_teacher-email"><span class="field__hint">email</span>
-                      <input class="field__input" type="text" name="teacher-email">
+                      <input class="field__input required" type="email" name="teacher-email">
                     </label>
                   </div>
                 </div>
@@ -117,28 +188,30 @@
                 <div class="application__title title--green title--upper title--size-xs title">Контактная информация команды</div>
                 <div class="application__row">
                   <label class="field application__field application__field--size-third __js_contact-name"><span class="field__hint">ФИО контактного лица</span>
-                    <input class="field__input" type="text" name="contact-name">
+                    <input class="field__input required" type="text" name="contact-name">
                   </label>
                   <label class="field application__field application__field--size-third __js_contact-phone"><span class="field__hint">Телефон</span>
-                    <input class="field__input" type="text" name="contact-phone">
+                    <input class="field__input required" type="tel" name="contact-phone">
                   </label>
                   <label class="field application__field application__field--size-third __js_contact-email"><span class="field__hint">email</span>
-                    <input class="field__input" type="text" name="contact-email">
+                    <input class="field__input required" type="email" name="contact-email">
                   </label>
                 </div>
               </div>
               <div class="application__bottom application__bottom--mt">
-                <button class="button application__send" type="submit"><span>отправить заявку на участие</span>
-                </button>
+                <div class="button-wrapper">
+                  <button class="button application__send" type="submit"><span>отправить заявку на участие</span>
+                  </button>
+                </div>
               </div>
               <div class="application__bottom">
                 <div class="application__checkbox custom-checkbox application__checkbox--mt">
                   <input class="visually-hidden" id="applicationMailing" type="checkbox" name="mailing">
                   <label class="custom-checkbox__label" for="applicationMailing">Настоящим подтверждаем своё желание получать рассылку и информацию об IBMM</label>
                 </div>
-                <div class="application__checkbox custom-checkbox application__checkbox--mt">
-                  <input class="visually-hidden" id="applicationPersonal" type="checkbox" name="personalData">
-                  <label class="custom-checkbox__label" for="applicationPersonal">Настоящим подтверждаем своё согласие на использование своих персональных данных, предоставленных в заявке на участие в IBMM</label>
+                <div class="application__checkbox custom-checkbox application__checkbox--mt application__consent">
+                  <input class="visually-hidden" id="applicationConsent" type="checkbox" name="personalData">
+                  <label class="custom-checkbox__label" for="applicationConsent">Настоящим подтверждаем своё согласие на использование своих персональных данных, предоставленных в заявке на участие в IBMM</label>
                 </div>
               </div>
             </form>

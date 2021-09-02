@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="education-course__wrapper-right">
-              <h1 class="education-course__title title--upper title">ОБРАЗОВАТЕЛЬНЫЙ ПРОЕКТ «МЕДИАЦИЯ В ВЫСШЕМ ОБРАЗОВАНИИ»</h1>
+              <h1 class="education-course__title title--upper">ОБРАЗОВАТЕЛЬНЫЙ ПРОЕКТ «МЕДИАЦИЯ В ВЫСШЕМ ОБРАЗОВАНИИ»</h1>
               <div class="education-course__description text-block">
                 <h2><strong>Описание  мероприятия</strong></h2>
                 <p>«Медиация в высшем образовании» - это образовательный проект Центра медиации при РСПП, который объединяет лучшие вузы России, чтобы через синергию лучших практик обучения встроить медиацию в образовательные программы каждого вуза страны.   </p><br>
@@ -90,32 +90,34 @@
               <div class="application__section">
                 <div class="application__row">
                   <label class="field application__field application__field--size-third"><span class="field__hint">Имя Фамилия</span>
-                    <input class="field__input" type="text" name="applicant-name">
+                    <input class="field__input required" type="text" name="applicant-name">
                   </label>
                   <label class="field application__field application__field--size-third"><span class="field__hint">Должность</span>
-                    <input class="field__input" type="text" name="applicant-position">
+                    <input class="field__input required" type="text" name="applicant-position">
                   </label>
                   <label class="field application__field application__field--size-third"><span class="field__hint">E-mail</span>
-                    <input class="field__input" type="email" name="applicant-email">
+                    <input class="field__input required" type="email" name="applicant-email">
                   </label>
                   <label class="field application__field application__field--size-third"><span class="field__hint">Компания</span>
-                    <input class="field__input" type="number" name="applicant-company">
+                    <input class="field__input required" type="text" name="applicant-company">
                   </label>
                   <label class="field application__field application__field--size-third"><span class="field__hint">Телефон</span>
-                    <input class="field__input" type="tel" name="applicant-phone">
+                    <input class="field__input required" type="tel" name="applicant-phone">
                   </label>
                   <label class="field application__field application__field--size-third education-course-apply__promo"><span class="field__hint">Промокод</span>
-                    <input class="field__input" type="tel" name="applicant-promo">
+                    <input class="field__input required" type="text" name="applicant-promo">
                   </label>
                 </div>
               </div>
               <div class="application__bottom education-course-apply__bottom">
-                <div class="application__checkbox custom-checkbox"> 
+                <div class="application__checkbox custom-checkbox application__consent">
                   <input class="visually-hidden" id="applicationConsent" type="checkbox" name="consent">
                   <label class="custom-checkbox__label" for="applicationConsent">Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a></label>
                 </div>
-                <button class="button application__send" type="submit"><span>Отправить заявку на обучение</span>
-                </button>
+                <div class="button-wrapper education-course__button-wrapper">
+                  <button class="button application__send" type="submit"><span>Отправить заявку на обучение</span>
+                  </button>
+                </div>
               </div>
             </form>
           </div>

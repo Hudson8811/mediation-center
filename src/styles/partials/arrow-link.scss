@@ -10,6 +10,18 @@
   text-transform: lowercase;
   text-decoration: none;
   transition: color 0.3s ease;
+  
+  &::after {
+    content: '';
+    display: inline-block;
+    background: url('../images/arrow-right.svg') no-repeat center / contain;
+    background-size: auto 100%;
+    background-position: right;
+    width: 46px;
+    height: 16px;
+    transition: transform 0.3s ease;
+    margin-bottom: -2px;
+  }
 
   &--without-text {
   }
@@ -23,41 +35,22 @@
   }
 
   &--large-arrow {
-    #{$self}__icon {
+    &::after {
       width: 90px;
+      height: 16px;
     }
+
   }
 
-  &__icon {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: bottom;
-    width: 46px;
-    min-width: 46px;
-    height: 22px;
-    margin-left: 16px;
-    transition: transform 0.3s ease;
-
-    svg {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      display: block;
-      fill: $persianGreen;
-      transition: fill 0.3s ease;
-    }
+  &__text {
+    margin-right: 16px;
   }
 
   @include hover {
     color: lighten($persianGreen, 5%);
 
-    #{$self}__icon {
+    &::after {
       transform: translateX(10px);
-      svg {
-        fill: lighten($persianGreen, 5%);
-      }
     }
   }
 }

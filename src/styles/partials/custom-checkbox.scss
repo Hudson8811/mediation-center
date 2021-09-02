@@ -60,3 +60,76 @@
     }
   }
 }
+
+.wpcf7-list-item {
+  margin: 0 !important;
+
+  label {
+    input {
+      position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+    }
+
+    input:checked ~ span {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 8px;
+        height: 8px;
+        border-radius: 3px;
+        background-color: $dark;
+      }
+    }
+
+    input:focus ~ span {
+      &::before {
+        background-color: $smoky;
+      }
+    }
+  }
+}
+
+.wpcf7-list-item-label {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+    font-size: 15px;
+    line-height: (18 / 15);
+    cursor: pointer;
+
+    a {
+      color: $persianGreen;
+      transition: color 0.3s ease;
+
+      @include hover {
+        color: lighten($persianGreen, 5%);
+      }
+    }
+
+    @include hover {
+      &::before {
+        background-color: $smoky;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #ffffff;
+
+      transition: background-color 0.3s ease;
+    }
+}

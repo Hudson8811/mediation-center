@@ -27,7 +27,7 @@ block main
   .inner-page 
     .inner-page__container.container
       h1.inner-page__title.title.title--green.title--upper= page.title 
-    section.inner-page__application.application
+    section.inner-page__application.application.application__order
       .application__container.container 
         form.application__form#orderForm(action="https://echo.htmlacademy.ru", method="post")
           .application__section
@@ -56,7 +56,7 @@ block main
               
               label.field.application__field
                 span.field__hint Наличие у сторон соглашения о применении процедуры медиации/медиативной оговорки в договоре
-                select.field__input.__js_select(name="settlement-measures") 
+                select.field__input.__js_select(name="settlement-measures-process") 
                   each item, index in ['Да', 'Нет']
                     option(value= index + 1)= item
 
@@ -69,14 +69,14 @@ block main
               label.field.application__field.application__field--size-third.application__field--size-mdfull
                 span.field__hint Сторона-заявитель
                 select.field__input.__js_select.__js_legal-status(name="applicant") 
-                  each item, index in ['Юридическое лицо', 'ИП', 'Физическое лицо']
-                    option(value= index + 1)= item
+                  each item in ['Юридическое лицо', 'ИП', 'Физическое лицо']
+                    option(value= item)= item
             .application__row
               each item in FIELDS_1
                 - const js1 = item.js || '';
                 label.field.application__field.application__field--size-third(class= js1)
                   span.field__hint= item.hint 
-                  input.field__input(type= item.type, name= item.name)
+                  input.field__input.required(type= item.type, name= item.name)
           
           .application__section
             +title('Информация о стороне-контрагенте', 'div', 'application__title title--green title--upper title--size-xs')
@@ -90,50 +90,32 @@ block main
                       option(value= index + 1, selected)= item
                     else 
                       option(value= index + 1)= item
-            .application__group
-              .application__row
-                label.field.application__field.application__field--size-third
-                  span.field__hint Сторона-контрагент 1
-                  select.field__input.__js_select.__js_legal-status(name="counterparty") 
-                    each item, index in ['Юридическое лицо', 'ИП', 'Физическое лицо']
-                      option(value= index + 1)= item
-
-                label.field.application__field.application__field--size-third
-                  span.field__hint Согласие на участие в процедуре медиации
-                  select.field__input.__js_select(name="mediation-consent") 
-                    each item, index in ['Согласна', 'Не обсуждали эту возможность', 'Не согласна']
-                      option(value= index + 1)= item
-              
-              .application__row
-                each item in FIELDS_2
-                  - const js2 = item.js || '';
-                  label.field.application__field.application__field--size-third(class= js2)
-                    span.field__hint= item.hint 
-                    input.field__input(type= item.type, name= item.name)
-              
-            .application__sides-wrapper.__js_counterparty
-              .application__group
+            each item, index in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+              -let hiddenClass = index > 1 ? 'hidden' : '';
+              .application__group.application__sides-group(class= hiddenClass)
                 .application__row
                   label.field.application__field.application__field--size-third
-                    span.field__hint Сторона-контрагент 2
-                    select.field__input.__js_select.__js_legal-status(name="counterparty2") 
-                      each item, index in ['Юридическое лицо', 'ИП', 'Физическое лицо']
-                        option(value= index + 1)= item
+                    span.field__hint= 'Сторона-контрагент ' + (index+1)
+                    select.field__input.__js_select.__js_legal-status.required(name= "counterparty-" + (index+1)) 
+                      each item in ['Юридическое лицо', 'ИП', 'Физическое лицо']
+                        option(value= item)= item
 
                   label.field.application__field.application__field--size-third
                     span.field__hint Согласие на участие в процедуре медиации
-                    select.field__input.__js_select(name="mediation-consent2") 
+                    select.field__input.__js_select.required(name= "mediation-consent-" + (index+1)) 
                       each item, index in ['Согласна', 'Не обсуждали эту возможность', 'Не согласна']
                         option(value= index + 1)= item
+                
                 .application__row
                   each item in FIELDS_2
-                    - const js3 = item.js || '';
-                    label.field.application__field.application__field--size-third(class= js3)
+                    - const js2 = item.js || '';
+                    label.field.application__field.application__field--size-third(class= js2)
                       span.field__hint= item.hint 
-                      input.field__input(type= item.type, name= item.name + '2')
+                      input.field__input.required(type= item.type, name= item.name + '-' + (index+1))
 
           .application__bottom 
-            .application__checkbox.custom-checkbox 
+            .application__checkbox.custom-checkbox.application__consent
               input.visually-hidden#applicationConsent(type="checkbox", name="consent")
               label.custom-checkbox__label(for="applicationConsent") Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a>
-            +button('Отправить заявку на медиацию', 'application__send')(type="submit")
+            .button-wrapper
+              +button('Отправить заявку на медиацию', 'application__send')(type="submit")

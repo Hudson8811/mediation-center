@@ -3,7 +3,7 @@
   line-height: (32 / 18);
 
   h1 {
-    margin-bottom: 72px;
+    //margin-bottom: 72px;
   }
 
   h2,
@@ -29,14 +29,21 @@
       font-size: 14px;
     }
   }
-  a {
-    color: inherit;
-  }
 
   ul {
     margin: 0 0 0 8px;
     padding: 0;
     list-style: inside;
+
+    @include max(md) {
+      font-size: 14px;
+    }
+
+    li {
+      @include max(md) {
+        font-size: 14px;
+      }
+    }
   }
 
   &--resume {

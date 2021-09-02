@@ -38,6 +38,12 @@
 		padding-bottom: 4px;
 	}
 
+  &-wrapper {
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+
 	&--border {
 		border-color: $white;
 	}
@@ -49,6 +55,15 @@
     max-width: 370px;
     padding-left: 27px;
     padding-right: 17px;
+    margin-top: 20px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 19px;
+      background: url('../images/arrow-down.svg') no-repeat center / contain;
+    }
 
     svg {
       transform: rotate(90deg);
@@ -77,4 +92,13 @@
 			fill: $persianGreen;
 		}
 	}
+
+  &--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+
+    &:hover {
+      opacity: 0.3;
+    }
+  }
 }

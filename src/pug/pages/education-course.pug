@@ -10,9 +10,9 @@ block vars
       {hint: 'Имя Фамилия', type: 'text', name: 'applicant-name'},
       {hint: 'Должность', type: 'text', name: 'applicant-position'},
       {hint: 'E-mail', type: 'email', name: 'applicant-email'},
-      {hint: 'Компания', type: 'number', name: 'applicant-company'},
+      {hint: 'Компания', type: 'text', name: 'applicant-company'},
       {hint: 'Телефон', type: 'tel', name: 'applicant-phone'},
-      {hint: 'Промокод', type: 'tel', name: 'applicant-promo', className: 'education-course-apply__promo'},
+      {hint: 'Промокод', type: 'text', name: 'applicant-promo', className: 'education-course-apply__promo'},
     ];
 
 block main
@@ -28,7 +28,7 @@ block main
             +person-card('3', 'Пери Измайлова', 'Медиатор', 'education-course__mediators-item')
 
         .education-course__wrapper-right
-          +title('ОБРАЗОВАТЕЛЬНЫЙ ПРОЕКТ «МЕДИАЦИЯ В ВЫСШЕМ ОБРАЗОВАНИИ»', 'h1', 'education-course__title title--upper')
+          h1.education-course__title.title--upper ОБРАЗОВАТЕЛЬНЫЙ ПРОЕКТ «МЕДИАЦИЯ В ВЫСШЕМ ОБРАЗОВАНИИ»
 
           .education-course__description.text-block
             h2 <strong>Описание  мероприятия</strong>
@@ -70,13 +70,14 @@ block main
                 - const addClass = item.className || '';
                 label.field.application__field.application__field--size-third(class= addClass)
                   span.field__hint= item.hint 
-                  input.field__input(type= item.type, name= item.name)
+                  input.field__input.required(type= item.type, name= item.name)
 
           .application__bottom.education-course-apply__bottom
-            .application__checkbox.custom-checkbox 
+            .application__checkbox.custom-checkbox.application__consent
               input.visually-hidden#applicationConsent(type="checkbox", name="consent")
               label.custom-checkbox__label(for="applicationConsent") Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a>
-            +button('Отправить заявку на обучение', 'application__send')(type="submit")
+            .button-wrapper.education-course__button-wrapper
+              +button('Отправить заявку на обучение', 'application__send')(type="submit")
 
 
 

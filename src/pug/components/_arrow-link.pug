@@ -1,6 +1,7 @@
 mixin arrow-link(text, className, url)
   - const mod = !text ? ' arrow-link--without-text' : '';
   
-  a(class= className ? className + ' arrow-link' + mod : 'arrow-link' + mod, href= (url || '#'))!= text
-    span.arrow-link__icon
-      +icon('arrow-right')(width="251", height="16")
+  a(class= className ? className + ' arrow-link' + mod : 'arrow-link' + mod, href= (url || '#'))
+    span.arrow-link__text!= text
+    //-span.arrow-link__icon
+    //-  +icon('arrow-right')(width="251", height="16")

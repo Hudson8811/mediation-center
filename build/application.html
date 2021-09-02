@@ -37,7 +37,7 @@
         <div class="inner-page__container container">
           <h1 class="inner-page__title title title--green title--upper">Заявка на медиацию</h1>
         </div>
-        <section class="inner-page__application application">
+        <section class="inner-page__application application application__order">
           <div class="application__container container"> 
             <form class="application__form" id="orderForm" action="https://echo.htmlacademy.ru" method="post">
               <div class="application__section">
@@ -72,7 +72,7 @@
                     </select>
                   </label>
                   <label class="field application__field"><span class="field__hint">Наличие у сторон соглашения о применении процедуры медиации/медиативной оговорки в договоре</span>
-                    <select class="field__input __js_select" name="settlement-measures"> 
+                    <select class="field__input __js_select" name="settlement-measures-process"> 
                       <option value="1">Да</option>
                       <option value="2">Нет</option>
                     </select>
@@ -84,27 +84,27 @@
                 <div class="application__row">
                   <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Сторона-заявитель</span>
                     <select class="field__input __js_select __js_legal-status" name="applicant"> 
-                      <option value="1">Юридическое лицо</option>
-                      <option value="2">ИП</option>
-                      <option value="3">Физическое лицо</option>
+                      <option value="Юридическое лицо">Юридическое лицо</option>
+                      <option value="ИП">ИП</option>
+                      <option value="Физическое лицо">Физическое лицо</option>
                     </select>
                   </label>
                 </div>
                 <div class="application__row">
                   <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-заявителя</span>
-                    <input class="field__input" type="text" name="applicant-name">
+                    <input class="field__input required" type="text" name="applicant-name">
                   </label>
                   <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-заявителя</span>
-                    <input class="field__input" type="text" name="representative-applicant-name">
+                    <input class="field__input required" type="text" name="representative-applicant-name">
                   </label>
                   <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-заявителя</span>
-                    <input class="field__input" type="number" name="applicant-tax-number">
+                    <input class="field__input required" type="number" name="applicant-tax-number">
                   </label>
                   <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-заявителя</span>
-                    <input class="field__input" type="tel" name="applicant-phone">
+                    <input class="field__input required" type="tel" name="applicant-phone">
                   </label>
                   <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-заявителя</span>
-                    <input class="field__input" type="email" name="applicant-email">
+                    <input class="field__input required" type="email" name="applicant-email">
                   </label>
                 </div>
               </div>
@@ -126,17 +126,17 @@
                     </select>
                   </label>
                 </div>
-                <div class="application__group">
+                <div class="application__group application__sides-group">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 1</span>
-                      <select class="field__input __js_select __js_legal-status" name="counterparty"> 
-                        <option value="1">Юридическое лицо</option>
-                        <option value="2">ИП</option>
-                        <option value="3">Физическое лицо</option>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-1"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select" name="mediation-consent"> 
+                      <select class="field__input __js_select required" name="mediation-consent-1"> 
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -145,67 +145,347 @@
                   </div>
                   <div class="application__row">
                     <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
-                      <input class="field__input" type="text" name="counterparty-name">
+                      <input class="field__input required" type="text" name="counterparty-name-1">
                     </label>
                     <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
-                      <input class="field__input" type="text" name="representative-counterparty-name">
+                      <input class="field__input required" type="text" name="representative-counterparty-name-1">
                     </label>
                     <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
-                      <input class="field__input" type="number" name="counterparty-tax-number">
+                      <input class="field__input required" type="number" name="counterparty-tax-number-1">
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
-                      <input class="field__input" type="tel" name="counterparty-phone">
+                      <input class="field__input required" type="tel" name="counterparty-phone-1">
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
-                      <input class="field__input" type="email" name="counterparty-email">
+                      <input class="field__input required" type="email" name="counterparty-email-1">
                     </label>
                   </div>
                 </div>
-                <div class="application__sides-wrapper __js_counterparty">
-                  <div class="application__group">
-                    <div class="application__row">
-                      <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 2</span>
-                        <select class="field__input __js_select __js_legal-status" name="counterparty2"> 
-                          <option value="1">Юридическое лицо</option>
-                          <option value="2">ИП</option>
-                          <option value="3">Физическое лицо</option>
-                        </select>
-                      </label>
-                      <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                        <select class="field__input __js_select" name="mediation-consent2"> 
-                          <option value="1">Согласна</option>
-                          <option value="2">Не обсуждали эту возможность</option>
-                          <option value="3">Не согласна</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div class="application__row">
-                      <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
-                        <input class="field__input" type="text" name="counterparty-name2">
-                      </label>
-                      <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
-                        <input class="field__input" type="text" name="representative-counterparty-name2">
-                      </label>
-                      <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
-                        <input class="field__input" type="number" name="counterparty-tax-number2">
-                      </label>
-                      <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
-                        <input class="field__input" type="tel" name="counterparty-phone2">
-                      </label>
-                      <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
-                        <input class="field__input" type="email" name="counterparty-email2">
-                      </label>
-                    </div>
+                <div class="application__group application__sides-group">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 2</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-2"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-2"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-2">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-2">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-2">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-2">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-2">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 3</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-3"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-3"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-3">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-3">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-3">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-3">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-3">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 4</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-4"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-4"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-4">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-4">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-4">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-4">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-4">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 5</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-5"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-5"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-5">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-5">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-5">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-5">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-5">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 6</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-6"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-6"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-6">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-6">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-6">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-6">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-6">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 7</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-7"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-7"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-7">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-7">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-7">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-7">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-7">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 8</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-8"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-8"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-8">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-8">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-8">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-8">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-8">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 9</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-9"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-9"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-9">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-9">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-9">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-9">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-9">
+                    </label>
+                  </div>
+                </div>
+                <div class="application__group application__sides-group hidden">
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 10</span>
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-10"> 
+                        <option value="Юридическое лицо">Юридическое лицо</option>
+                        <option value="ИП">ИП</option>
+                        <option value="Физическое лицо">Физическое лицо</option>
+                      </select>
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
+                      <select class="field__input __js_select required" name="mediation-consent-10"> 
+                        <option value="1">Согласна</option>
+                        <option value="2">Не обсуждали эту возможность</option>
+                        <option value="3">Не согласна</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="application__row">
+                    <label class="field application__field application__field--size-third __js_side-name"><span class="field__hint">ФИО стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="counterparty-name-10">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_agent"><span class="field__hint">ФИО представителя стороны-котрагента</span>
+                      <input class="field__input required" type="text" name="representative-counterparty-name-10">
+                    </label>
+                    <label class="field application__field application__field--size-third __js_tax-num"><span class="field__hint">ИНН стороны-котрагента</span>
+                      <input class="field__input required" type="number" name="counterparty-tax-number-10">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Контактный телефон стороны-котрагента</span>
+                      <input class="field__input required" type="tel" name="counterparty-phone-10">
+                    </label>
+                    <label class="field application__field application__field--size-third"><span class="field__hint">Email стороны-котрагента</span>
+                      <input class="field__input required" type="email" name="counterparty-email-10">
+                    </label>
                   </div>
                 </div>
               </div>
               <div class="application__bottom"> 
-                <div class="application__checkbox custom-checkbox"> 
+                <div class="application__checkbox custom-checkbox application__consent">
                   <input class="visually-hidden" id="applicationConsent" type="checkbox" name="consent">
                   <label class="custom-checkbox__label" for="applicationConsent">Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a></label>
                 </div>
-                <button class="button application__send" type="submit"><span>Отправить заявку на медиацию</span>
-                </button>
+                <div class="button-wrapper">
+                  <button class="button application__send" type="submit"><span>Отправить заявку на медиацию</span>
+                  </button>
+                </div>
               </div>
             </form>
           </div>

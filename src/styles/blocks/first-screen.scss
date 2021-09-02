@@ -5,12 +5,13 @@
 
   @include max(md) {
     height: 300px;
+    padding: 30px 0;
   }
 
   @include max(sm) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   &__bg {

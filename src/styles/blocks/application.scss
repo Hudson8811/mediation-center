@@ -4,6 +4,12 @@
 
   background-color: $grey;
 
+  &__form {
+    br {
+      display: none;
+    }
+  }
+
   &__container {
   }
 
@@ -112,7 +118,10 @@
     }
 
     &--mt {
-      margin-top: -16px;
+      
+      &:nth-child(2) {
+        margin-top: -16px;
+      }
     }
   }
 
@@ -196,5 +205,11 @@
     margin-top: 20px;
     padding: 18px 13px;
     text-transform: lowercase;
+  }
+
+  &__group {
+    &.hidden {
+      display: none;
+    }
   }
 }

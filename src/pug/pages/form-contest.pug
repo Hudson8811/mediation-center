@@ -20,15 +20,15 @@ block vars
     
     const FIELDS_3 = [
       {hint: 'ФИО', type: 'text', name: 'teacher-name', js: '__js_teacher-name'},
-      {hint: 'Телефон', type: 'text', name: 'teacher-phone', js: '__js_teacher-phone'},
+      {hint: 'Телефон', type: 'tel', name: 'teacher-phone', js: '__js_teacher-phone'},
       {hint: 'Должность', type: 'text', name: 'teacher-rank', js: '__js_teacher-rank'},
-      {hint: 'email', type: 'text', name: 'teacher-email', js: '__js_teacher-email'},
+      {hint: 'email', type: 'email', name: 'teacher-email', js: '__js_teacher-email'},
     ];
 
     const FIELDS_4 = [
       {hint: 'ФИО контактного лица', type: 'text', name: 'contact-name', js: '__js_contact-name'},
-      {hint: 'Телефон', type: 'text', name: 'contact-phone', js: '__js_contact-phone'},
-      {hint: 'email', type: 'text', name: 'contact-email', js: '__js_contact-email'},
+      {hint: 'Телефон', type: 'tel', name: 'contact-phone', js: '__js_contact-phone'},
+      {hint: 'email', type: 'email', name: 'contact-email', js: '__js_contact-email'},
     ];
 
 block main
@@ -44,7 +44,7 @@ block main
                 - const js1 = item.js || '';
                 label.field.application__field.application__field--size-third(class= js1)
                   span.field__hint= item.hint 
-                  input.field__input(type= item.type, name= item.name)
+                  input.field__input.required(type= item.type, name= item.name)
               label.field.application__field.application__field--text-green.application__field--size-third
                 span.field__hint Количество студентов в команде
                 select.field__input.__js_select.__js_students-count(name="students-count")
@@ -52,22 +52,25 @@ block main
                     option(value= index + 1)= item
           .application__section.application__section--mt
             +title('Информация о членах команды', 'div', 'application__title title--green title--upper title--size-xs')
-            .application__group.application__group--mt
-              .application__row.application__row--grid
-                .application__row-left
-                  +title('Заполните данные студента 1', 'div', 'application__title--inside-row title--green title--size-xxs')
-                .application__row-right
-                  each item in FIELDS_2
-                    - const js2 = item.js || '';
-                    label.field.application__field.application__field--size-half(class= js2)
-                      span.field__hint= item.hint 
-                      input.field__input(type= item.type, name= item.name)
-                  label.field.application__field.application__field--text-green.application__field--size-half
-                    span.field__hint Опыт участия в Moot Courts
-                    select.field__input.__js_select.__js_student-experience(name="student-experience1") 
-                        option(value="Нет") Нет
-                        option(value="Да") Да
-            .application__students-wrapper.__js_counterparty
+
+            each item, index in ['1', '2', '3', '4']
+              -let hiddenClass = index > 0 ? 'hidden' : '';
+              .application__group.application__group--mt.application__students-group(class= hiddenClass)
+                .application__row.application__row--grid
+                  .application__row-left
+                    +title('Заполните данные студента ' + (index + 1) , 'div', 'application__title--inside-row title--green title--size-xxs')
+                  .application__row-right
+                    each item in FIELDS_2
+                      - const js2 = item.js || '';
+                      label.field.application__field.application__field--size-half(class= js2)
+                        span.field__hint= item.hint 
+                        input.field__input.required(type= item.type, name= item.name + '-' + (index + 1))
+                    label.field.application__field.application__field--text-green.application__field--size-half
+                      span.field__hint Опыт участия в Moot Courts
+                      select.field__input.__js_select.__js_student-experience.required(name="student-experience-" + (index + 1)) 
+                          option(value="Нет") Нет
+                          option(value="Да") Да
+
 
           .application__section.application__section--mt
             +title('Информация о преподавателе', 'div', 'application__title title--green title--upper title--size-xs')
@@ -83,7 +86,7 @@ block main
                   - const js2 = item.js || '';
                   label.field.application__field.application__field--size-half(class= js2)
                     span.field__hint= item.hint 
-                    input.field__input(type= item.type, name= item.name)
+                    input.field__input.required(type= item.type, name= item.name)
           
           .application__section.application__section--mt
             +title('Контактная информация команды', 'div', 'application__title title--green title--upper title--size-xs')
@@ -92,14 +95,15 @@ block main
                 - const js2 = item.js || '';
                 label.field.application__field.application__field--size-third(class= js2)
                   span.field__hint= item.hint 
-                  input.field__input(type= item.type, name= item.name)
+                  input.field__input.required(type= item.type, name= item.name)
           .application__bottom.application__bottom--mt
-            +button('отправить заявку на участие', 'application__send')(type="submit")
+            .button-wrapper
+              +button('отправить заявку на участие', 'application__send')(type="submit")
 
           .application__bottom
             .application__checkbox.custom-checkbox.application__checkbox--mt
               input.visually-hidden#applicationMailing(type="checkbox", name="mailing")
               label.custom-checkbox__label(for="applicationMailing") Настоящим подтверждаем своё желание получать рассылку и информацию об IBMM
-            .application__checkbox.custom-checkbox.application__checkbox--mt
-              input.visually-hidden#applicationPersonal(type="checkbox", name="personalData")
-              label.custom-checkbox__label(for="applicationPersonal") Настоящим подтверждаем своё согласие на использование своих персональных данных, предоставленных в заявке на участие в IBMM
+            .application__checkbox.custom-checkbox.application__checkbox--mt.application__consent
+              input.visually-hidden#applicationConsent(type="checkbox", name="personalData")
+              label.custom-checkbox__label(for="applicationConsent") Настоящим подтверждаем своё согласие на использование своих персональных данных, предоставленных в заявке на участие в IBMM

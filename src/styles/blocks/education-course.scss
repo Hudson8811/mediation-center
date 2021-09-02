@@ -73,7 +73,16 @@
   }
 
   &__title {
-    margin-bottom: 62px;
+    margin-bottom: 39px;
+    line-height: (38.73 / 32);
+    font-size: 32px;
+    font-weight: 600;
+    color: $persianGreen;
+  
+    @include max(sm) {
+      font-size: 24px;
+      line-height: (38.73 / 24);
+    }
 
     @include max(sm) {
       font-size: 26px;
@@ -94,6 +103,14 @@
   &-partners {
     display: flex;
     align-items: flex-start;
+    
+
+    &-row {
+      display: flex;
+      margin-left: -15px;
+      margin-right: -15px;
+      flex-wrap: wrap;
+    }
 
     @include max(440) {
       flex-direction: column;
@@ -102,6 +119,10 @@
     &__image {
       margin-right: 30px;
       max-width: 170px;
+
+      &--no-text {
+        margin: 15px;
+      }
 
       @include max(440) {
         margin-right: 0;
@@ -112,6 +133,7 @@
     &__text {
       font-size: 15px;
       line-height: 24px;
+      margin: 15px;
     }
   }
 
@@ -144,6 +166,10 @@
     padding: 36px 0 49px;
     background-color: rgba(60, 76, 84, 0.08);
 
+    br {
+      display: none;
+    }
+
     &__promo {
       span {
         color: $persianGreen;
@@ -159,20 +185,30 @@
           max-width: calc(50% - 7.5px);
 
           @include min(md) {
-            max-width: 480px;
+            max-width: 438px;
           }
         }
 
         .application__send {
+          width: 100%;
           margin-top: 0;
-          margin-left: auto;
-          max-width: calc(50% - 7.5px);
-
-          @include min(md) {
-            max-width: calc(33.33% - 20px);
-          }
         }
       }
     }
+  }
+
+  &__button-wrapper {
+    width: 100%;
+    max-width: calc(50% - 7.5px);
+    margin-left: auto;
+
+    @include min(md) {
+      max-width: calc(33.33% - 20px);
+    }
+  }
+
+  &__button {
+    margin-top: 36px;
+    max-width: 370px;
   }
 }
