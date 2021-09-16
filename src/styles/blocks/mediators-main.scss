@@ -182,8 +182,10 @@
 	}
 
 	&__person {
-		width: calc(33.3333% - 30px);
-		margin: 0 15px 30px;
+		//width: calc(33.3333% - 30px);
+		//margin: 0 15px 30px;
+    width: calc(33.3333% - 27.43px);
+    margin: 0 13.7px 30px;
 
 		@include max(sm) {
 			width: calc(50% - 30px);
