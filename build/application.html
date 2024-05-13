@@ -33,49 +33,87 @@
       </div>
     </header>
     <main class="main">
-      <div class="inner-page"> 
+      <div class="inner-page">
         <div class="inner-page__container container">
           <h1 class="inner-page__title title title--green title--upper">Заявка на медиацию</h1>
         </div>
-        <section class="inner-page__application application application__order">
-          <div class="application__container container"> 
+        <section class="inner-page__application application application__order application__order--v130524">
+          <div class="order-type-selection">
+            <div class="container">
+              <div class="ots-block">
+                <div class="ots-block__title">Выберите тип заявки</div>
+                <div class="ots-block__radios">
+                  <!--код генерируется в cf7--><span class="wpcf7-form-control-wrap order-type"><span class="wpcf7-form-control wpcf7-radio ots-radios __js_order-type"><span class="wpcf7-list-item first">
+                        <label>
+                          <input type="radio" name="order-type" value="Медиация" checked="checked"><span class="wpcf7-list-item-label">Медиация</span>
+                        </label></span><span class="wpcf7-list-item">
+                        <label>
+                          <input type="radio" name="order-type" value="Переговоры"><span class="wpcf7-list-item-label">Переговоры</span>
+                        </label></span><span class="wpcf7-list-item">
+                        <label>
+                          <input type="radio" name="order-type" value="Партнерская сессия"><span class="wpcf7-list-item-label">Партнерская сессия</span>
+                        </label></span><span class="wpcf7-list-item last">
+                        <label>
+                          <input type="radio" name="order-type" value="Конфликтологическое консультирование"><span class="wpcf7-list-item-label">Конфликтологическое консультирование</span>
+                        </label></span></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="application__container container">
             <form class="application__form" id="orderForm" action="https://echo.htmlacademy.ru" method="post">
               <div class="application__section">
-                <div class="application__title title--green title--upper title--size-xs title">Информация о медиации</div>
+                <div class="application__title title--green title--upper title--size-xs __js-application-section--show--only-med title">Информация о медиации</div>
+                <div class="application__title title--green title--upper title--size-xs __js-application-section--show--only-no-med title">ОБЩАЯ ИНФОРМАЦИЯ </div>
                 <div class="application__row">
-                  <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Вид медиации</span>
-                    <select class="field__input __js_select __js_mediation-type" name="mediation-type"> 
-                      <option value="1">Договорная медиация</option>
-                      <option value="2">Медиация бизнес-конфликта</option>
+                  <label class="field application__field application__field--size-third application__field--size-mdfull __js-application-section--show--only-med"><span class="field__hint">Вид медиации</span>
+                    <select class="field__input __js_select __js_mediation-type" name="mediation-type">
+                      <!--option(value= index + 1)= item-->
+                      <option value="Урегулирование спора">Урегулирование спора</option>
+                      <!--option(value= index + 1)= item-->
+                      <option value="Создание договоренностей">Создание договоренностей</option>
                     </select>
                   </label>
-                  <label class="field application__field application__field--size-two-thirds"><span class="field__hint">Сфера бизнеса</span>
-                    <select class="field__input __js_select" name="business-area"> 
-                      <option value="1">Медиация корпоративных конфликтов</option>
-                      <option value="2">Медиация в сфере строительства и недвижимости</option>
-                      <option value="3">Медиация в сфере ритейла и FMCG</option>
-                      <option value="4">Медиация в сфере HoReCa и туризма</option>
-                      <option value="5">Медиация в банковской сфере</option>
-                      <option value="6">Медиация в сфере страховования</option>
-                      <option value="7">Медиация в сфере интеллектуальной собственности</option>
-                      <option value="8">Медиация в сфере несостоятельности и банкротства</option>
-                      <option value="9">Медиация конфликта с государственным органом</option>
-                      <option value="10">Иное</option>
+                  <label class="field application__field application__field--size-two-thirds __js-application-section--hide--only-partners"><span class="field__hint">Сфера отношений</span>
+                    <select class="field__input __js_select __js_select-business-area" name="business-area">
+                      <!--each item, index in ['Медиация корпоративных конфликтов', 'Медиация в сфере строительства и недвижимости', 'Медиация в сфере ритейла и FMCG', 'Медиация в сфере HoReCa и туризма', 'Медиация в банковской сфере', 'Медиация в сфере страховования', 'Медиация в сфере интеллектуальной собственности', 'Медиация в сфере несостоятельности и банкротства', 'Медиация конфликта с государственным органом', 'Иное' ]
+                      option(value= index + 1)= item
+                      
+                      -->
+                      <option value="1">Корпоративная</option>
+                      <option value="2">Трудовая</option>
+                      <option value="3">Семейная</option>
+                      <option value="4">Наследственная</option>
+                      <option value="5">Строительство и недвижимость</option>
+                      <option value="6">Ритейл и fmcg</option>
+                      <option value="7">Horeca и туризм</option>
+                      <option value="8">Банковская</option>
+                      <option value="9">Защита прав потребителей</option>
+                      <option value="10">Страхование</option>
+                      <option value="11">Интеллектуальная собственность</option>
+                      <option value="12">Несостоятельность и банкротство</option>
+                      <option value="13">Административная</option>
+                      <option value="14">Здравоохранение</option>
+                      <option value="15">Образование</option>
+                      <option value="16">Иное</option>
                     </select>
                   </label>
-                  <label class="field application__field"><span class="field__hint">Какие меры по урегулированию спора предпринимались ранее?</span>
-                    <select class="field__input __js_measures" name="settlement-measures" multiple> 
+                  <label class="field application__field __js-application-section--show--only-med"><span class="field__hint">Какие меры по урегулированию спора предпринимались ранее?</span>
+                    <select class="field__input __js_measures" name="settlement-measures" multiple>
                       <option value="1">Переговоры</option>
                       <option value="2">Направлена претензия</option>
                       <option value="3">Спор находится в суде</option>
                       <option value="4" selected>Не предпринимались</option>
                     </select>
                   </label>
-                  <label class="field application__field"><span class="field__hint">Наличие у сторон соглашения о применении процедуры медиации/медиативной оговорки в договоре</span>
-                    <select class="field__input __js_select" name="settlement-measures-process"> 
-                      <option value="1">Да</option>
-                      <option value="2">Нет</option>
+                  <label class="field application__field __js-application-section--show--only-med"><span class="field__hint">Наличие у сторон соглашения о применении процедуры медиации/медиативной оговорки в договоре</span>
+                    <select class="field__input __js_select" name="settlement-measures-process">
+                      <option value="Да">Да</option>
+                      <option value="Нет">Нет</option>
                     </select>
+                  </label>
+                  <label class="field application__field"><span class="field__hint">Сфера бизнеса</span>
+                    <input class="field__input required __js_business-area-text-field" type="text" name="business-area-text">
                   </label>
                 </div>
               </div>
@@ -83,7 +121,7 @@
                 <div class="application__title title--green title--upper title--size-xs title">Информация о стороне-заявителе</div>
                 <div class="application__row">
                   <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Сторона-заявитель</span>
-                    <select class="field__input __js_select __js_legal-status" name="applicant"> 
+                    <select class="field__input __js_select __js_legal-status" name="applicant">
                       <option value="Юридическое лицо">Юридическое лицо</option>
                       <option value="ИП">ИП</option>
                       <option value="Физическое лицо">Физическое лицо</option>
@@ -112,7 +150,7 @@
                 <div class="application__title title--green title--upper title--size-xs title">Информация о стороне-контрагенте</div>
                 <div class="application__row">
                   <label class="field application__field application__field--size-third application__field--size-mdfull"><span class="field__hint">Количество сторон-контрагентов</span>
-                    <select class="field__input __js_select __js_sides-count" name="sides-number"> 
+                    <select class="field__input __js_select __js_sides-count" name="sides-number">
                       <option value="1">1</option>
                       <option value="2" selected>2</option>
                       <option value="3">3</option>
@@ -129,14 +167,14 @@
                 <div class="application__group application__sides-group">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 1</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-1"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-1">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-1"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-1">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -164,14 +202,14 @@
                 <div class="application__group application__sides-group">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 2</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-2"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-2">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-2"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-2">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -199,14 +237,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 3</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-3"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-3">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-3"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-3">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -234,14 +272,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 4</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-4"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-4">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-4"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-4">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -269,14 +307,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 5</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-5"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-5">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-5"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-5">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -304,14 +342,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 6</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-6"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-6">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-6"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-6">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -339,14 +377,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 7</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-7"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-7">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-7"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-7">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -374,14 +412,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 8</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-8"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-8">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-8"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-8">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -409,14 +447,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 9</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-9"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-9">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-9"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-9">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -444,14 +482,14 @@
                 <div class="application__group application__sides-group hidden">
                   <div class="application__row">
                     <label class="field application__field application__field--size-third"><span class="field__hint">Сторона-контрагент 10</span>
-                      <select class="field__input __js_select __js_legal-status required" name="counterparty-10"> 
+                      <select class="field__input __js_select __js_legal-status required" name="counterparty-10">
                         <option value="Юридическое лицо">Юридическое лицо</option>
                         <option value="ИП">ИП</option>
                         <option value="Физическое лицо">Физическое лицо</option>
                       </select>
                     </label>
                     <label class="field application__field application__field--size-third"><span class="field__hint">Согласие на участие в процедуре медиации</span>
-                      <select class="field__input __js_select required" name="mediation-consent-10"> 
+                      <select class="field__input __js_select required __js_consent-select-item" name="mediation-consent-10">
                         <option value="1">Согласна</option>
                         <option value="2">Не обсуждали эту возможность</option>
                         <option value="3">Не согласна</option>
@@ -477,7 +515,7 @@
                   </div>
                 </div>
               </div>
-              <div class="application__bottom"> 
+              <div class="application__bottom">
                 <div class="application__checkbox custom-checkbox application__consent">
                   <input class="visually-hidden" id="applicationConsent" type="checkbox" name="consent">
                   <label class="custom-checkbox__label" for="applicationConsent">Я ознакомлен(а) с <a href="#">«Политикой конфиденциальности»</a> и даю <a href="#">«Согласие на обработку персональных данных»</a></label>

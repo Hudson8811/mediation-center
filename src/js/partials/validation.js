@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
   const form = document.querySelector('.application__form');
-  
+
   if (form) {
     const checkboxWrapper = form.querySelector('.application__consent');
 
@@ -56,8 +56,13 @@ window.addEventListener('load', function() {
             if (item.tagName === 'select' && item.value === '---' || item.value === '') {
               showError(item.closest('.application__field'));
             }
-            
-          } 
+
+          }
+          else{
+            if(item.closest('label.field--disabled')){
+              hideError(item.closest('.application__field'));
+            }
+          }
 
           if (item.closest('.application__field').querySelector('.field__error') && !selectChanged) {
             if (item.getAttribute('type') === 'text' && item.value.length >= 3) {
@@ -91,7 +96,7 @@ window.addEventListener('load', function() {
       }
 
       checkInputs();
-      
+
       const invalidInputs = form.querySelectorAll('.field__error');
       const emptyInputs = form.querySelectorAll('.empty');
 
@@ -123,8 +128,8 @@ window.addEventListener('load', function() {
           !item.closest('.field--disabled')) {
             if (!item.classList.contains('empty') && item.value === '' || item.value === '---') {
               item.classList.add('empty');
-            } 
-          } 
+            }
+          }
 
             if (item.value !== '' && item.value !== '---') {
               if (item.classList.contains('empty')) {
@@ -138,7 +143,7 @@ window.addEventListener('load', function() {
                 item.classList.remove('empty');
               }
             }
-          
+
         })
 
       }
@@ -158,7 +163,7 @@ window.addEventListener('load', function() {
       button.disabled = isValid ? false : true;
       button.closest('.button-wrapper').classList[isValid ? 'remove' : 'add']('button-wrapper--disabled');
     }
-    
+
 
     function showError(elem, type = '') {
       if (elem.querySelector('.field__error') && type === '') {
@@ -186,7 +191,7 @@ window.addEventListener('load', function() {
         case '':
           errorSpan.textContent = 'Поле обязательно для заполнения.';
           break;
-          
+
         case 'email':
           errorSpan.textContent = 'Введен некорректный email.';
           break;
@@ -198,20 +203,20 @@ window.addEventListener('load', function() {
         case 'taxNumber':
           errorSpan.textContent = 'Введен неполный ИНН.';
           break;
-      
+
         default:
           errorSpan.textContent = 'Поле обязательно для заполнения.';
           break;
       }
 
-  
+
       elem.append(errorSpan);
     }
-  
+
 
     function hideError(elem) {
       const errorSpan = elem.querySelector('.field__error');
-  
+
       if (errorSpan) {
         errorSpan.remove();
       }

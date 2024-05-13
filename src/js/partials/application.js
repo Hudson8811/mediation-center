@@ -1,6 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
   const appForm = document.querySelector('.application__form');
+  const jq_appSection = $(appForm).closest('.application');
   const legalStatusNum = 'Юридическое лицо';
+  const orderTypeValueOfMediation='Медиация';
+  const orderTypeValueOfPartnersSession='Партнерская сессия';
 
   if (appForm) {
     const sidesWrapper = document.querySelector('.__js_counterparty');
@@ -8,8 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const typeSelect = document.querySelector('.__js_mediation-type');
 
+
     if (typeSelect) {
       const measuresSelect = document.querySelector('.__js_measures');
+      const jq_consentSelects = $('.__js_consent-select-item');
+
 
       const measuresChoices = new Choices(measuresSelect, {
         searchEnabled: false,
@@ -30,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      processOrderType();
       validateMediationTypeField();
 
       if (legalStatusFields.length) {
@@ -51,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
           taxNumField.classList[currentVal !== legalStatusNum ? 'add' : 'remove']('field--disabled');
           sideNameField.classList[currentVal === legalStatusNum ? 'add' : 'remove']('field--disabled');
 
-          
+
 
           agentField.querySelector('input').value = '';
           taxNumField.querySelector('input').value = '';
@@ -63,11 +70,53 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      function processOrderType() {
+        var orderType=$('.__js_order-type input:checked').val();
+
+        $('.__js-application-section--hide--only-partners').show();
+
+        $('.__js_select-business-area').closest('.application__field').show();
+
+        $('.__js_business-area-text-field').prop('disabled', true).closest('.application__field').addClass('field--disabled').hide();
+
+
+
+        if(orderType===orderTypeValueOfMediation){
+          jq_consentSelects.prop('disabled', false);
+          jq_consentSelects.closest('.application__field').removeClass('field--disabled').show();
+          $('.__js-application-section--show--only-med').show();
+          $('.__js-application-section--show--only-no-med').hide();
+          $('.__js_select-business-area').closest('.field').addClass('application__field--size-two-thirds');
+        }
+        else{
+          if(orderType===orderTypeValueOfPartnersSession){
+            jq_consentSelects.prop('disabled', true);
+            jq_consentSelects.closest('.application__field').addClass('field--disabled').hide();
+            $('.__js-application-section--show--only-med').hide();
+            $('.__js-application-section--show--only-no-med').show();
+            $('.__js-application-section--hide--only-partners').hide();
+            $('.__js_select-business-area').closest('.application__field').hide();
+
+            $('.__js_business-area-text-field').prop('disabled', false).closest('.application__field').removeClass('field--disabled').show();
+
+          }else{
+            jq_consentSelects.prop('disabled', true);
+            jq_consentSelects.closest('.application__field').addClass('field--disabled').hide();
+            $('.__js-application-section--show--only-no-med').show();
+            $('.__js-application-section--show--only-med').hide();
+            $('.__js_select-business-area').closest('.field').removeClass('application__field--size-two-thirds');
+          }
+        }
+
+      }
+
       function validateMediationTypeField() {
         const value = typeSelect.value;
-        value !== 'Медиация бизнес-конфликта' ? measuresChoices.disable() : measuresChoices.enable();
-        measuresSelect.closest('.field').classList[value !== 'Медиация бизнес-конфликта' ? 'add' : 'remove']('field--disabled');
+        //console.log(value);
+        value !== 'Урегулирование спора' ? measuresChoices.disable() : measuresChoices.enable();
+        measuresSelect.closest('.field').classList[value !== 'Урегулирование спора' ? 'add' : 'remove']('field--disabled');
       }
+
     }
 
     function validateTeacherExistence(current) {
@@ -97,8 +146,13 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    $('.__js_order-type input').on('change',function(){appForm.dispatchEvent(new Event("change"));    });
+
+
     appForm.addEventListener('change', e => {
       const current = e.target;
+
+      processOrderType();
 
       if (current.closest('.__js_legal-status')) {
         validateLegalStatusField(current);
@@ -150,7 +204,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //    case 'orderForm':
   //      group.innerHTML = orderFormHTML;
   //      break;
-    
+
   //    case 'contestForm':
   //      group.innerHTML = contestFormHTML;
   //      break;
@@ -178,7 +232,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //        valueComparer: (value1, value2) => {
   //          return value1 === value2;
   //        }
-          
+
   //      });
   //    });
   //  }
