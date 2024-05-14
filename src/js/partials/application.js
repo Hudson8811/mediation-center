@@ -1,7 +1,95 @@
 window.addEventListener('DOMContentLoaded', () => {
+	function filesUpload() {
+		const uploadBtn = document.querySelector(".application__upload");
+		const uploadInput = document.querySelector(
+			"input[type=file].field__input--hidden"
+		);
+		const filesContainer = document.querySelector(".application__file-list");
+		let files = [];
+
+		if (!uploadBtn || !uploadInput || !filesContainer) {
+			return;
+		}
+
+		const createFileHtml = (file) => {
+			const fileContainer = document.createElement("div");
+			const fileNameText = document.createElement("span");
+			const fileRemoveBtn = document.createElement("button");
+
+			fileContainer.classList.add("application__file");
+			fileContainer.dataset.filename = file.name;
+			fileRemoveBtn.classList.add("application__file-remove");
+			fileRemoveBtn.setAttribute("type", "button");
+
+			fileNameText.textContent = file.name;
+			fileRemoveBtn.innerHTML = "&times;";
+
+			fileContainer.append(fileNameText);
+			fileContainer.append(fileRemoveBtn);
+
+			return fileContainer;
+		};
+
+		const triggerInput = () => {
+			uploadInput.click();
+		};
+
+		const uploadHandler = (event) => {
+			if (!event.target.files.length) {
+				return;
+			}
+
+			if (files.length === 0) {
+				files = Array.from(event.target.files);
+			} else {
+				const tempfiles = Array.from(event.target.files);
+				const namespace = [];
+
+				for (let i = 0; i < files.length; i++) {
+					const name = files[i].name;
+					namespace.push(name);
+				}
+
+				const filteredArr = tempfiles.filter(
+					(item) => !namespace.includes(item.name)
+				);
+
+				files = [...files, ...filteredArr];
+			}
+
+			files.forEach((file) => {
+				if (!document.querySelector(`[data-filename="${file.name}"]`)) {
+					const fileHtml = createFileHtml(file);
+					filesContainer.append(fileHtml);
+				}
+			});
+		};
+
+		const removeFile = (el) => {
+			const name = el.querySelector("span").textContent;
+			const fileHtml = document.querySelector(`[data-filename="${name}"]`);
+
+			fileHtml.remove();
+			files = files.filter((file) => file.name !== name);
+		};
+
+		const clickHandler = (event) => {
+			const target = event.target;
+			const removeBtn = target.closest(".application__file-remove");
+			if (removeBtn) {
+				removeFile(removeBtn.closest(".application__file"));
+			}
+		};
+		uploadBtn.addEventListener("click", triggerInput);
+		uploadInput.addEventListener("change", uploadHandler);
+		filesContainer.addEventListener("click", clickHandler);
+	}
+
+	filesUpload();
+
   const appForm = document.querySelector('.application__form');
   const jq_appSection = $(appForm).closest('.application');
-  const legalStatusNum = 'Юридическое лицо';
+  const legalStatus = 'Юридическое лицо';
   const orderTypeValueOfMediation='Медиация';
   const orderTypeValueOfPartnersSession='Партнерская сессия';
 
@@ -50,23 +138,29 @@ window.addEventListener('DOMContentLoaded', () => {
         const parent = current.closest('.application__group') || current.closest('.application__section');
 
         if (parent) {
-          const agentField = parent.querySelector('.__js_agent');
+          //const agentField = parent.querySelector('.__js_agent');
           const taxNumField = parent.querySelector('.__js_tax-num');
           const sideNameField = parent.querySelector('.__js_side-name');
+					const companyNameField = parent.querySelector(".__js_side-company");
 
-          agentField.classList[currentVal !== legalStatusNum ? 'add' : 'remove']('field--disabled');
-          taxNumField.classList[currentVal !== legalStatusNum ? 'add' : 'remove']('field--disabled');
-          sideNameField.classList[currentVal === legalStatusNum ? 'add' : 'remove']('field--disabled');
+          taxNumField.classList[currentVal !== legalStatus ? 'add' : 'remove']('field--disabled');
+          sideNameField.classList[currentVal === legalStatus ? 'add' : 'remove']('field--disabled');
+					companyNameField.classList[
+						currentVal !== legalStatus ? "add" : "remove"
+					]("field--disabled");
+          // agentField.classList[currentVal !== legalStatus ? 'add' : 'remove']('field--disabled');
 
 
 
-          agentField.querySelector('input').value = '';
+          //agentField.querySelector('input').value = '';
           taxNumField.querySelector('input').value = '';
           sideNameField.querySelector('input').value = '';
+					companyNameField.querySelector("input").value = "";
 
-          agentField.querySelector('.field__input').disabled = currentVal !== legalStatusNum;
-          taxNumField.querySelector('.field__input').disabled = currentVal !== legalStatusNum;
-          sideNameField.querySelector('.field__input').disabled = currentVal === legalStatusNum;
+          //agentField.querySelector('.field__input').disabled = currentVal !== legalStatus;
+          taxNumField.querySelector('.field__input').disabled = currentVal !== legalStatus;
+          sideNameField.querySelector('.field__input').disabled = currentVal === legalStatus;
+					companyNameField.querySelector(".field__input").disabled = currentVal !== legalStatus;
         }
       }
 
@@ -192,9 +286,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (typeSelect) {
         validateMediationTypeField();
       }
-
     });
-
   }
 
   //function setFieldGroup(num) {
