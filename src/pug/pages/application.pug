@@ -12,7 +12,8 @@ block vars
       {hint: 'ФИО представителя стороны-заявителя', type: 'text', name: 'representative-applicant-name', js: '__js_agent'},
       {hint: 'ИНН стороны-заявителя', type: 'number', name: 'applicant-tax-number', js: '__js_tax-num'},
       {hint: 'Контактный телефон стороны-заявителя', type: 'tel', name: 'applicant-phone'},
-      {hint: 'Email стороны-заявителя', type: 'email', name: 'applicant-email'}
+      {hint: 'Email стороны-заявителя', type: 'email', name: 'applicant-email'},
+      {hint: 'Название юридического лица', type: 'text', name: 'applicant-company', js: '__js_side-company'}
     ];
 
     const FIELDS_2 = [
@@ -20,7 +21,8 @@ block vars
       {hint: 'ФИО представителя стороны-котрагента', type: 'text', name: 'representative-counterparty-name', js: '__js_agent'},
       {hint: 'ИНН стороны-котрагента', type: 'number', name: 'counterparty-tax-number', js: '__js_tax-num'},
       {hint: 'Контактный телефон стороны-котрагента', type: 'tel', name: 'counterparty-phone'},
-      {hint: 'Email стороны-котрагента', type: 'email', name: 'counterparty-email'}
+      {hint: 'Email стороны-котрагента', type: 'email', name: 'counterparty-email'},
+      {hint: 'Название юридического лица', type: 'text', name: 'counterparty-company', js: '__js_side-company'}
     ];
 
 block main
@@ -28,6 +30,7 @@ block main
     .inner-page__container.container
       h1.inner-page__title.title.title--green.title--upper= page.title
     section.inner-page__application.application.application__order.application__order--v130524
+
 
 
       .order-type-selection
@@ -145,6 +148,10 @@ block main
                     select.field__input.__js_select.required.__js_consent-select-item(name= "mediation-consent-" + (index+1))
                       each item, index in ['Согласна', 'Не обсуждали эту возможность', 'Не согласна']
                         option(value= index + 1)= item
+                //
+                  для .field 'Контактный телефон стороны-котрагента' на бэке добавляю:  class="__js-skip-validation-if-order-type" data-order-types-for-skip-validation="Медиация"
+
+
 
                 .application__row
                   each item in FIELDS_2

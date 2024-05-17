@@ -141,7 +141,9 @@ window.addEventListener('DOMContentLoaded', () => {
           //const agentField = parent.querySelector('.__js_agent');
           const taxNumField = parent.querySelector('.__js_tax-num');
           const sideNameField = parent.querySelector('.__js_side-name');
-					const companyNameField = parent.querySelector(".__js_side-company");
+          const companyNameField = parent.querySelector(".__js_side-company");
+
+
 
           taxNumField.classList[currentVal !== legalStatus ? 'add' : 'remove']('field--disabled');
           sideNameField.classList[currentVal === legalStatus ? 'add' : 'remove']('field--disabled');

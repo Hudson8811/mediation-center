@@ -16,14 +16,31 @@ window.addEventListener('load', function() {
 
     const validateForm = (selectChanged) => {
       const requiredInputs = form.querySelectorAll('.required');
+      var current_order_type=false;
+      if($('.__js_order-type input:checked').length>0){
+        current_order_type=$('.__js_order-type input:checked').val();
+      }
+
+
       if (requiredInputs.length) {
         requiredInputs.forEach(item => {
+          var need_skip_check=false;
+          var field_el=$(item).closest('.field');
+//если у родительского .field есть класс __js-skip-validation-if-order-type и аттрибут data-order-types-for-skip-validation содержит value текущего радио [name='order-type'], то скипаем валидацию даного поля
+          if(current_order_type!==false && field_el.length>0 && field_el.hasClass('__js-skip-validation-if-order-type')){
+            var typesForSkipValidation=field_el.attr('data-order-types-for-skip-validation');
+            if(typeof(typesForSkipValidation)==='string' && typesForSkipValidation.includes(current_order_type)){
+              need_skip_check=true;
+            }
+          }
+
+
           if (item.closest('.application__field').querySelector('.field__error') && selectChanged) {
             hideError(item.closest('.application__field'));
           }
 
           if (!item.closest('.application__group.hidden') &&
-              !item.closest('label.field--disabled') && !selectChanged) {
+              !item.closest('label.field--disabled') && !selectChanged && !need_skip_check) {
 
             if (item.getAttribute('type') === 'text' && item.value.length < 3) {
               showError(item.closest('.application__field'));
@@ -59,10 +76,13 @@ window.addEventListener('load', function() {
 
           }
           else{
-            if(item.closest('label.field--disabled')){
+            if(item.closest('label.field--disabled') || need_skip_check){
               hideError(item.closest('.application__field'));
             }
           }
+
+
+
 
           if (item.closest('.application__field').querySelector('.field__error') && !selectChanged) {
             if (item.getAttribute('type') === 'text' && item.value.length >= 3) {
