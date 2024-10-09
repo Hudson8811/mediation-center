@@ -3,10 +3,12 @@ window.addEventListener('load', function() {
 
   if (form) {
     const checkboxWrapper = form.querySelector('.application__consent');
+    const checkboxWrapper2 = form.querySelector('.application__criteria');
 
     if (checkboxWrapper) {
 
     const checkbox = document.getElementById('applicationConsent');
+    const checkbox2 = document.getElementById('applicationСriteria');
     const button = form.querySelector('button[type=submit]');
 
     let triedToSend = false;
@@ -112,7 +114,14 @@ window.addEventListener('load', function() {
         showError(checkboxWrapper);
       } else {
         hideError(checkboxWrapper);
+      }
 
+      if(checkbox2) {
+        if (!checkbox2.checked) {
+          showError(checkboxWrapper2);
+        } else {
+          hideError(checkboxWrapper2);
+        }
       }
 
       checkInputs();
@@ -121,6 +130,11 @@ window.addEventListener('load', function() {
       const emptyInputs = form.querySelectorAll('.empty');
 
       isValid = checkbox.checked && !invalidInputs.length && !emptyInputs.length ? true : false;
+      if(checkbox2) {
+        if (!checkbox2.checked) {
+          isValid = false;
+        }
+      }
 
       toggleButton();
     }
