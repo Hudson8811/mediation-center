@@ -248,7 +248,9 @@ window.addEventListener('DOMContentLoaded', () => {
     appForm.addEventListener('change', e => {
       const current = e.target;
 
-      processOrderType();
+		if (typeof processOrderType === "function") {
+			processOrderType();
+		}
 
       if (current.closest('.__js_legal-status')) {
         validateLegalStatusField(current);
